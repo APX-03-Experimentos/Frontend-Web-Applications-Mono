@@ -13,7 +13,6 @@ export class AssignmentsService extends BaseService<Assignment>{
 
   constructor() {
     super();
-    this.serverBaseUrl = `${environment.assignmentsServiceBaseUrl}`;
     this.resourceEndpoint = environment.assignmentsEndpointPath;
   }
 

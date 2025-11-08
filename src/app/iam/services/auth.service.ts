@@ -17,7 +17,6 @@ export class AuthService extends BaseService<User> {
 
   constructor() {
     super();
-    this.serverBaseUrl = `${environment.authenticationServiceBaseUrl}`
     this.resourceEndpoint = usersResourceEndpoint;
     this.authenticationPath = authenticationResourceEndpoint;
   }
