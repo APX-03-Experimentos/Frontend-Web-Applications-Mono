@@ -1,0 +1,51 @@
+<div class="page-bg">
+  <div class="main card">
+    <img
+      ngSrc="/assets/learnhive_logo_transparent.png"
+      alt="Logo LearnHive"
+      height="150"
+      width="150"
+      priority
+    />
+
+    <h2>Libro de Reclamaciones</h2>
+    <h4>Registra aquí tus reclamos o sugerencias.</h4>
+
+    <form class="complaint-form" aria-label="Formulario de libro de reclamaciones">
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Nombre completo</mat-label>
+        <input matInput placeholder="Tu nombre" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Correo electrónico</mat-label>
+        <input matInput type="email" placeholder="ejemplo@correo.com" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Asunto</mat-label>
+        <input matInput placeholder="Motivo de tu reclamo" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Descripción</mat-label>
+        <textarea matInput rows="5" placeholder="Describe tu reclamo o sugerencia"></textarea>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" disabled>
+        Enviar reclamo
+      </button>
+      <p class="note">*Este formulario es solo demostrativo.</p>
+    </form>
+  </div>
+</div>
+
+<footer class="footer" role="contentinfo" aria-label="LearnHive footer">
+  <div class="footer-inner">
+    <p class="footer-copy">© 2024 LearnHive. Todos los derechos reservados.</p>
+
+    <nav class="footer-nav" aria-label="Footer links">
+      <a class="footer-link" routerLink="/auth">Volver</a>
+    </nav>
+  </div>
+</footer>

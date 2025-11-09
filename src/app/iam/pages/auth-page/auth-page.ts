@@ -7,7 +7,7 @@ import {RegisterBox} from '../../components/register-box/register-box';
 import {AuthService} from '../../services/auth.service';
 
 import {TokenService} from '../../../shared/services/token.service';
-import {Router} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-auth-page',
@@ -17,7 +17,8 @@ import {Router} from '@angular/router';
     MatButtonToggle,
     FormsModule,
     LoginBox,
-    RegisterBox
+    RegisterBox,
+    RouterLink
   ],
   templateUrl: './auth-page.html',
   standalone: true,

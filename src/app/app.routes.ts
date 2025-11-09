@@ -10,6 +10,8 @@ import { UserManagementPageComponent } from './administrator/pages/user-manageme
 import { CourseManagementPage } from './administrator/pages/course-management-page/course-management-page';
 
 import { AssignmentManagementPageComponent } from './administrator/pages/assignment-management-page/assignment-management-page';
+import {SaasPage} from './iam/pages/saas-page/saas-page';
+import {ComplaintsPage} from './iam/pages/complaints-page/complaints-page';
 export const routes: Routes = [
   { path: '', redirectTo: '/auth', pathMatch: 'full' },
   { path: 'auth', component: AuthPage },
@@ -22,6 +24,9 @@ export const routes: Routes = [
   { path: 'admin/users', component: UserManagementPageComponent },
   { path: 'admin/courses', component: CourseManagementPage },
   { path: 'admin/assignments', component: AssignmentManagementPageComponent },
+
+  { path: 'saas', component: SaasPage},
+  { path: 'complaints', component: ComplaintsPage},
 
   { path: 'no-access', component: NoAccessPageComponent },
   { path: '**', redirectTo: '/auth' }
