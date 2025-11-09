@@ -7,6 +7,7 @@ import {MatIcon} from '@angular/material/icon';
 import {TokenService} from '../../../shared/services/token.service';
 import {Router, RouterLink, RouterOutlet} from '@angular/router';
 import {LoadingService} from '../../../shared/services/loading.service';
+import {NotificationsBellComponent} from '../../../notifications/components/notification-bell/notification-bell';
 
 @Component({
   selector: 'app-navigator',
@@ -20,7 +21,8 @@ import {LoadingService} from '../../../shared/services/loading.service';
     MatIconButton,
     RouterOutlet,
     MatButton,
-    RouterLink
+    RouterLink,
+    NotificationsBellComponent
   ],
   templateUrl: './navigator.html',
   standalone: true,

@@ -1,0 +1,50 @@
+<div class="notification-container">
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    aria-label="Notificaciones"
+    class="notification-button"
+  >
+    <mat-icon>notifications</mat-icon>
+    <span *ngIf="unreadCount > 0" class="notification-badge">
+      {{ unreadCount }}
+    </span>
+  </button>
+
+  <mat-menu #menu="matMenu" class="notification-menu" xPosition="before">
+    <ng-container *ngIf="notifications.length > 0; else noNotifications">
+
+      <div *ngFor="let n of notifications | slice:0:10"
+           class="notification-item"
+           [class.unread]="!n.read">
+        <div class="notif-content">
+          <div class="notif-header">
+            <div class="notif-title">{{ n.title }}</div>
+            <button
+              *ngIf="!n.read"
+              mat-icon-button
+              (click)="markAsRead(n)"
+              class="mark-read-btn"
+              matTooltip="Marcar como leída">
+              <mat-icon>done</mat-icon>
+            </button>
+          </div>
+          <div class="notif-body">{{ n.message }}</div>
+          <div class="notif-time">{{ n.ocurredAt | date:'short' }}</div>
+        </div>
+      </div>
+
+      <button mat-menu-item (click)="markAllAsRead()">
+        <mat-icon>done_all</mat-icon>
+        <span>Marcar todas como leídas</span>
+      </button>
+    </ng-container>
+
+    <ng-template #noNotifications>
+      <div class="no-notifications">
+        <mat-icon>notifications_off</mat-icon>
+        <p>Sin notificaciones</p>
+      </div>
+    </ng-template>
+  </mat-menu>
+</div>
