@@ -1,80 +1,92 @@
 <div class="analytics-container">
   <h1>Análisis del Curso: {{course?.title}}</h1>
 
+  <!-- === RESUMEN GENERAL === -->
   <div class="stats-overview">
     <div class="stat-card">
-      <h3>Total de Estudiantes</h3>
-      <p class="stat-number">{{students.length}}</p>
+      <mat-icon>group</mat-icon>
+      <div>
+        <h3>Total de Estudiantes</h3>
+        <p class="stat-number">{{students.length}} alumnos</p>
+      </div>
     </div>
     <div class="stat-card">
-      <h3>Total de Asignaciones</h3>
-      <p class="stat-number">{{assignments.length}}</p>
+      <mat-icon>assignment</mat-icon>
+      <div>
+        <h3>Total de Asignaciones</h3>
+        <p class="stat-number">{{assignments.length}} tareas</p>
+      </div>
     </div>
     <div class="stat-card">
-      <h3>Entregas Realizadas</h3>
-      <p class="stat-number">{{submissions.length}}</p>
+      <mat-icon>cloud_upload</mat-icon>
+      <div>
+        <h3>Entregas Realizadas</h3>
+        <p class="stat-number">{{submissions.length}} entregas</p>
+      </div>
     </div>
     <div class="stat-card">
-      <h3>Promedio General</h3>
-      <p class="stat-number">
-        {{calculateOverallAverage()}}
-      </p>
+      <mat-icon>grade</mat-icon>
+      <div>
+        <h3>Promedio General</h3>
+        <p class="stat-number">{{calculateOverallAverage()}} / 20</p>
+      </div>
     </div>
   </div>
 
-  <div class="charts-grid">
-    <div class="chart-container">
-      <h2>Porcentaje de Entregas por Asignación</h2>
+  <!-- === NAV DE GRÁFICOS === -->
+  <nav class="chart-tabs">
+    <button
+      *ngFor="let tab of chartTabs; let i = index"
+      [class.active]="selectedTab === i"
+      (click)="selectedTab = i"
+    >
+      {{tab.label}}
+    </button>
+  </nav>
+
+  <!-- === CONTENEDOR DE GRÁFICOS === -->
+  <div class="chart-section">
+    <div class="chart-container" *ngIf="selectedTab === 0">
+      <h2>{{chartTabs[0].label}}</h2>
       <canvas baseChart
               [data]="barChartData"
               [options]="barChartOptions"
-              [type]="barChartType"
-              (chartHover)="chartHovered($event)"
-              (chartClick)="chartClicked($event)">
-      </canvas>
+              [type]="barChartType"></canvas>
     </div>
 
-    <div class="chart-container">
-      <h2>Calificación Promedio por Asignación</h2>
+    <div class="chart-container" *ngIf="selectedTab === 1">
+      <h2>{{chartTabs[1].label}}</h2>
       <canvas baseChart
               [data]="radarChartData"
               [options]="radarChartOptions"
-              [type]="radarChartType"
-              (chartHover)="chartHovered($event)"
-              (chartClick)="chartClicked($event)">
-      </canvas>
+              [type]="radarChartType"></canvas>
     </div>
 
-    <div class="chart-container">
-      <h2>Estado de Calificaciones</h2>
+    <div class="chart-container" *ngIf="selectedTab === 2">
+      <h2>{{chartTabs[2].label}}</h2>
       <canvas baseChart
               [data]="doughnutChartData"
               [options]="doughnutChartOptions"
-              [type]="doughnutChartType"
-              (chartHover)="chartHovered($event)"
-              (chartClick)="chartClicked($event)">
-      </canvas>
+              [type]="doughnutChartType"></canvas>
     </div>
 
-    <div class="chart-container">
-      <h2>Distribución de Calificaciones</h2>
+    <div class="chart-container" *ngIf="selectedTab === 3">
+      <h2>{{chartTabs[3].label}}</h2>
       <canvas baseChart
               [data]="distributionChartData"
               [options]="distributionChartOptions"
-              [type]="distributionChartType"
-              (chartHover)="chartHovered($event)"
-              (chartClick)="chartClicked($event)">
-      </canvas>
+              [type]="distributionChartType"></canvas>
     </div>
   </div>
 
+  <!-- === DETALLE DE ASIGNACIONES === -->
   <div class="assignments-detail">
     <h2>Detalle por Asignación</h2>
     <div class="assignment-card" *ngFor="let assignment of assignments; let i = index">
       <h3>{{assignment.title}}</h3>
       <div class="assignment-stats">
-        <p><strong>Entregas:</strong> {{getSubmissionCount(assignment.id)}}/{{students.length}} ({{assignmentSubmissionRate[i]}}%)</p>
-        <p><strong>Calificación promedio:</strong> {{averageScores[i]}}/20</p>
+        <p><strong>Entregas:</strong> {{getSubmissionCount(assignment.id)}} / {{students.length}} ({{assignmentSubmissionRate[i]}}%)</p>
+        <p><strong>Promedio:</strong> {{averageScores[i]}} / 20</p>
         <p><strong>Fecha límite:</strong> {{assignment.deadline | date:'mediumDate'}}</p>
       </div>
     </div>
