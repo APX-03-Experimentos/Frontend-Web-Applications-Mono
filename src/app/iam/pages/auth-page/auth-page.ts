@@ -8,6 +8,7 @@ import {AuthService} from '../../services/auth.service';
 
 import {TokenService} from '../../../shared/services/token.service';
 import {Router, RouterLink} from '@angular/router';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-auth-page',
@@ -18,7 +19,8 @@ import {Router, RouterLink} from '@angular/router';
     FormsModule,
     LoginBox,
     RegisterBox,
-    RouterLink
+    RouterLink,
+    TranslatePipe
   ],
   templateUrl: './auth-page.html',
   standalone: true,

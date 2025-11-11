@@ -9,6 +9,8 @@ import {AuthService} from '../../services/auth.service';
 import {TokenService} from '../../../shared/services/token.service';
 import {LoadingService} from '../../../shared/services/loading.service';
 import {Router} from '@angular/router';
+import {TranslatePipe} from '@ngx-translate/core';
+import {MatIcon} from '@angular/material/icon';
 
 @Component({
   selector: 'app-register-box',
@@ -21,7 +23,9 @@ import {Router} from '@angular/router';
     MatButton,
     MatButtonToggle,
     MatButtonToggleGroup,
-    FormsModule
+    FormsModule,
+    TranslatePipe,
+    MatIcon
   ],
   templateUrl: './register-box.html',
   standalone: true,
