@@ -1,0 +1,32 @@
+{
+  "auth_page": {
+    "welcome": "Bienvenido a LearnHive",
+    "description": "Plataforma integral de análisis y gestión educativa.",
+    "login": "Iniciar Sesión",
+    "login_description": "Ingresa tus credenciales para acceder a tu cuenta.",
+    "signup": "Registrarse",
+    "signup_description": "Únete a LearnHive como estudiante o profesor",
+
+    "user_type": "Tipo de Usuario",
+
+    "student": "Estudiante",
+    "teacher": "Profesor",
+
+    "username": "Nombre de usuario",
+    "username_placeholder": "Ingresa tu nombre de usuario",
+
+    "password": "Contraseña",
+    "password_placeholder": "Ingresa tu contraseña",
+
+    "confirm_password": "Confirmar Contraseña",
+    "confirm_password_placeholder": "Confirma tu contraseña",
+
+    "invalid_credentials": "El usuario o la contraseña son incorrectos.",
+
+    "forgot_password": "¿Olvidaste tu contraseña?",
+
+    "accept_tos": "Al registrarte, aceptas nuestros Términos de Servicio y Política de Privacidad.",
+
+    "passwords_not_match": "Las contraseñas no coinciden."
+  }
+}

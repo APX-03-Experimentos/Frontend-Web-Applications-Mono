@@ -13,7 +13,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {provideNativeDateAdapter} from '@angular/material/core';
 import {provideCharts, withDefaultRegisterables} from 'ng2-charts';
 
-export const HttpLoaderFactory = (http: HttpClient)=> new TranslateHttpLoader();
+export const HttpLoaderFactory = (http: HttpClient)=> new TranslateHttpLoader(http);
 export const appConfig: ApplicationConfig = {
   providers: [
     provideCharts(withDefaultRegisterables()),
