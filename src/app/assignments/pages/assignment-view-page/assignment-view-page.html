@@ -26,9 +26,14 @@
                   {{ GetFileName(fileUrl) }}
                 </a>
                 <span style="width: 10px"></span>
-                <button mat-icon-button class="red">
-                  <mat-icon>delete</mat-icon>
-                </button>
+                @if (userRole === "ROLE_TEACHER") {
+                  <button
+                    mat-icon-button
+                    class="red"
+                    (click)="RemoveFile(fileUrl)">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                }
               </li>
             }
           </ul>
@@ -42,6 +47,19 @@
       <button mat-flat-button (click)="OpenCreateSubmissionDialog()">Añadir Entrega</button>
     } @else if (userRole === "ROLE_TEACHER") {
       <h1 class="submissions-indicator">Entregas: </h1>
+      <!-- Botón para añadir archivos como material de la tarea -->
+      <button mat-flat-button color="primary" (click)="OpenFilePickerForAssignmentFiles()">
+        Añadir archivo a la tarea
+      </button>
+
+      <!-- input oculto que permite seleccionar múltiples archivos -->
+      <input
+        #assignmentFileInput
+        type="file"
+        multiple
+        hidden
+        (change)="OnAssignmentFilesSelected($event)"
+      >
     }
   </div>
 
