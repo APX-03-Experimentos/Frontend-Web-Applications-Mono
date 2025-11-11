@@ -6,13 +6,15 @@ import {RouterLink} from '@angular/router';
 import {User} from '../../../iam/model/user.entity';
 import {AuthService} from '../../../iam/services/auth.service';
 import {SubmissionsService} from '../../services/submissions.service';
+import {MatIcon} from '@angular/material/icon';
 
 @Component({
   selector: 'app-assignment-item',
   imports: [
     MatCard,
     MatButton,
-    RouterLink
+    RouterLink,
+    MatIcon
   ],
   templateUrl: './assignment-item.html',
   standalone: true,

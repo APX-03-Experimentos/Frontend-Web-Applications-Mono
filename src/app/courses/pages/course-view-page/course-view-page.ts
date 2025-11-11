@@ -12,13 +12,15 @@ import {
 } from '../../../assignments/components/create-assignment-dialog/create-assignment-dialog';
 import {AuthService} from '../../../iam/services/auth.service';
 import {User} from '../../../iam/model/user.entity';
+import {MatIcon} from '@angular/material/icon';
 
 @Component({
   selector: 'app-course-view-page',
   imports: [
     AssignmentList,
     MatButton,
-    RouterLink
+    RouterLink,
+    MatIcon
   ],
   templateUrl: './course-view-page.html',
   standalone: true,
