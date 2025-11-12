@@ -2,7 +2,15 @@
   <img mat-card-image src="{{course?.imageUrl}}" alt="{{course?.title}}">
   <mat-card-content>
     <h2>{{course?.title}}</h2>
-    <h3><mat-icon style="vertical-align: middle; position: relative ;bottom: 2px">keyboard_double_arrow_right</mat-icon> Key: {{course?.key}}</h3>
-    <button mat-button [routerLink]="['/course',course?.courseId]" color="secondary"><mat-icon>search</mat-icon> Ver</button>
+    <h3>
+      <mat-icon style="vertical-align: middle; position: relative; bottom: 2px">
+        keyboard_double_arrow_right
+      </mat-icon>
+      {{ "dashboard.course_key" | translate }} {{course?.key}}
+    </h3>
+    <button mat-button [routerLink]="['/course',course?.courseId]" color="secondary">
+      <mat-icon>search</mat-icon>
+      {{ "dashboard.view_course" | translate }}
+    </button>
   </mat-card-content>
 </mat-card>

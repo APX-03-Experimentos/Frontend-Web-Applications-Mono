@@ -2,9 +2,9 @@
   @if (assignments.length === 0) {
     <div class="empty-state" aria-live="polite">
       <div class="empty-card">
-        <img src="/assets/imagen_1.png" alt="Sin cursos" class="empty-bg" />
-        <h3>Aún no hay tareas disponibles</h3>
-        <p>Cuando se publiquen tareas, aparecerán aquí.</p>
+        <img src="/assets/imagen_1.png" alt="{{ 'course_page.no_assignments_alt' | translate }}" class="empty-bg" />
+        <h3>{{ "course_page.no_assignments_title" | translate }}</h3>
+        <p>{{ "course_page.no_assignments_message" | translate }}</p>
       </div>
     </div>
   }

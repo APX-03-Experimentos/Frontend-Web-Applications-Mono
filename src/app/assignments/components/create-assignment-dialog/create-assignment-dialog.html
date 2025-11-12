@@ -1,12 +1,12 @@
 <mat-dialog-content>
-  <h2>Crear una Tarea</h2>
+  <h2>{{ "course_page.create_assignment_title" | translate }}</h2>
 
   <form #assignmentForm="ngForm">
     <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Título</mat-label>
+      <mat-label>{{ "course_page.assignment_title_label" | translate }}</mat-label>
       <input
         matInput
-        placeholder="Título de la tarea"
+        placeholder="{{ 'course_page.assignment_title_placeholder' | translate }}"
         name="title"
         [(ngModel)]="title"
         required
@@ -14,10 +14,10 @@
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Descripción</mat-label>
+      <mat-label>{{ "course_page.assignment_description_label" | translate }}</mat-label>
       <textarea
         matInput
-        placeholder="Descripción de la tarea"
+        placeholder="{{ 'course_page.assignment_description_placeholder' | translate }}"
         name="description"
         [(ngModel)]="description"
         rows="3"
@@ -25,16 +25,16 @@
       ></textarea>
     </mat-form-field>
 
-    <h3>Archivos</h3>
+    <h3>{{ "course_page.assignment_files_title" | translate }}</h3>
     <input type="file" (change)="onFilesSelected($event)" multiple />
     <div style="height: 30px"></div>
 
     <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Fecha límite</mat-label>
+      <mat-label>{{ "course_page.assignment_deadline_label" | translate }}</mat-label>
       <input
         matInput
         [matDatepicker]="picker"
-        placeholder="Selecciona una fecha"
+        placeholder="{{ 'course_page.assignment_deadline_placeholder' | translate }}"
         name="deadline"
         [(ngModel)]="deadline"
         [min]="minDate"
@@ -48,13 +48,13 @@
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
-  <button mat-button (click)="dialogRef.close()">Cancelar</button>
+  <button mat-button (click)="dialogRef.close()">{{ "course_page.cancel" | translate }}</button>
   <button
     mat-raised-button
     color="primary"
     [disabled]="!assignmentForm.valid"
     (click)="OnSave()"
   >
-    Guardar
+    {{ "course_page.save" | translate }}
   </button>
 </mat-dialog-actions>

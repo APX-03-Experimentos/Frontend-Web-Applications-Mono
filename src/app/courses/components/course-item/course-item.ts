@@ -4,6 +4,7 @@ import {Course} from '../../model/course.entity';
 import {MatButton} from '@angular/material/button';
 import {RouterLink} from '@angular/router';
 import {MatIcon} from '@angular/material/icon';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-course-item',
@@ -13,7 +14,8 @@ import {MatIcon} from '@angular/material/icon';
     MatCardImage,
     MatButton,
     RouterLink,
-    MatIcon
+    MatIcon,
+    TranslatePipe
   ],
   templateUrl: './course-item.html',
   standalone: true,

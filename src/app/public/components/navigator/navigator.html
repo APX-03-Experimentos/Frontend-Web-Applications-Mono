@@ -9,25 +9,24 @@
     <nav class="nav-links">
       <a mat-button class="red-text" [routerLink]="['courses']">
         <mat-icon>home</mat-icon>
-        Cursos
+        {{ "nav.courses" | translate }}
       </a>
 
       <a mat-button class="red-text" (click)="LogOut(); drawer.toggle()">
         <mat-icon>logout</mat-icon>
-        Cerrar Sesión
+        {{ "nav.logout" | translate }}
       </a>
     </nav>
-
   </mat-sidenav>
 
   <mat-sidenav-content>
     @if (IsUserLoggedIn())
     {
       <mat-toolbar class="toolbar" color="primary">
-        <button mat-icon-button (click)="drawer.toggle()" class="menu-button" aria-label="Toggle sidenav">
+        <button mat-icon-button (click)="drawer.toggle()" class="menu-button" aria-label="{{ 'nav.toggle_menu' | translate }}">
           <mat-icon>menu</mat-icon>
         </button>
-        <button mat-icon-button (click)="GoBack()" class="menu-button" aria-label="Go Back">
+        <button mat-icon-button (click)="GoBack()" class="menu-button" aria-label="{{ 'nav.go_back' | translate }}">
           <mat-icon>arrow_back</mat-icon>
         </button>
         <span class="toolbar-title">LearnHive</span>

@@ -3,7 +3,6 @@
   flex-direction: column;
   position: sticky;
   width: 100%;
-  top: 80px;
   z-index: 999;
 }
 

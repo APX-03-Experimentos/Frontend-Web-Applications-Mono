@@ -12,6 +12,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {provideNativeDateAdapter} from '@angular/material/core';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-create-assignment-dialog',
@@ -31,6 +32,7 @@ import {provideNativeDateAdapter} from '@angular/material/core';
     MatInputModule,
     MatFormFieldModule,
     MatDatepickerModule,
+    TranslatePipe,
   ],
   templateUrl: './create-assignment-dialog.html',
   standalone: true,

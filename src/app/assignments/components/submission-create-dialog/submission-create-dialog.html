@@ -1,16 +1,20 @@
 <mat-dialog-content>
-  <h1>Entrega tu Trabajo</h1>
+  <h1>{{ "assignment_page.submit_title" | translate }}</h1>
 
   <mat-form-field>
-    <mat-label>
-      Contenido
-    </mat-label>
-    <textarea matInput [(ngModel)]="content"></textarea>
+    <mat-label>{{ "assignment_page.submit_content_label" | translate }}</mat-label>
+    <textarea matInput [(ngModel)]="content" placeholder="{{ 'assignment_page.submit_content_placeholder' | translate }}"></textarea>
   </mat-form-field>
-  <h3>Archivos</h3>
+
+  <h3>{{ "assignment_page.submit_files_label" | translate }}</h3>
   <input type="file" (change)="onFilesSelected($event)" multiple>
 </mat-dialog-content>
+
 <mat-dialog-actions>
-  <button mat-button (click)="dialogRef.close()">Cancelar</button>
-  <button mat-flat-button (click)="SendSubmission()">Enviar</button>
+  <button mat-button (click)="dialogRef.close()">
+    {{ "assignment_page.submit_cancel" | translate }}
+  </button>
+  <button mat-flat-button (click)="SendSubmission()">
+    {{ "assignment_page.submit_send" | translate }}
+  </button>
 </mat-dialog-actions>

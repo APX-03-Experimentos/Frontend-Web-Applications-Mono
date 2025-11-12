@@ -1,7 +1,13 @@
 <div class="submission-list-container">
-  @for (submission of submissions; track submission.id)
-  {
-    <app-submission-item [submission]="submission"></app-submission-item>
+  @if (submissions.length === 0) {
+    <div class="empty-submission-list" aria-live="polite">
+      <img src="/assets/imagen_1.png" alt="Sin entregas" class="empty-bg" />
+      <h3>{{ "assignment_page.no_submissions_title" | translate }}</h3>
+      <p>{{ "assignment_page.no_submissions_description" | translate }}</p>
+    </div>
+  } @else {
+    @for (submission of submissions; track submission.id) {
+      <app-submission-item [submission]="submission"></app-submission-item>
+    }
   }
 </div>
-

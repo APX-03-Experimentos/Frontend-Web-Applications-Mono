@@ -13,6 +13,7 @@ import {
 import {AuthService} from '../../../iam/services/auth.service';
 import {User} from '../../../iam/model/user.entity';
 import {MatIcon} from '@angular/material/icon';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-course-view-page',
@@ -20,7 +21,8 @@ import {MatIcon} from '@angular/material/icon';
     AssignmentList,
     MatButton,
     RouterLink,
-    MatIcon
+    MatIcon,
+    TranslatePipe
   ],
   templateUrl: './course-view-page.html',
   standalone: true,

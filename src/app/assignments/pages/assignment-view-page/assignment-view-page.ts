@@ -15,6 +15,7 @@ import {SubmissionCreateDialog} from '../../components/submission-create-dialog/
 import JSZip from 'jszip';
 import {saveAs} from 'file-saver';
 import {finalize} from 'rxjs';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-assignment-view-page',
@@ -23,7 +24,8 @@ import {finalize} from 'rxjs';
     MatIcon,
     SubmissionList,
     MatButton,
-    MatIconButton
+    MatIconButton,
+    TranslatePipe
   ],
   templateUrl: './assignment-view-page.html',
   standalone: true,

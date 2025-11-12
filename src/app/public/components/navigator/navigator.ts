@@ -8,6 +8,7 @@ import {TokenService} from '../../../shared/services/token.service';
 import {Router, RouterLink, RouterOutlet} from '@angular/router';
 import {LoadingService} from '../../../shared/services/loading.service';
 import {NotificationsBellComponent} from '../../../notifications/components/notification-bell/notification-bell';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navigator',
@@ -22,7 +23,8 @@ import {NotificationsBellComponent} from '../../../notifications/components/noti
     RouterOutlet,
     MatButton,
     RouterLink,
-    NotificationsBellComponent
+    NotificationsBellComponent,
+    TranslatePipe
   ],
   templateUrl: './navigator.html',
   standalone: true,

@@ -11,6 +11,7 @@ import {LoadingService} from '../../../shared/services/loading.service';
 import JSZip from 'jszip';
 import {saveAs} from 'file-saver';
 import {MatIcon} from '@angular/material/icon';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-submission-content-dialog',
@@ -23,7 +24,8 @@ import {MatIcon} from '@angular/material/icon';
     MatButton,
     MatError,
     ReactiveFormsModule,
-    MatIcon
+    MatIcon,
+    TranslatePipe
   ],
   templateUrl: './submission-content-dialog.html',
   standalone: true,

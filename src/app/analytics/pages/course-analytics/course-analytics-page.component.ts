@@ -14,12 +14,13 @@ import { BaseChartDirective } from 'ng2-charts';
 import { CommonModule } from '@angular/common';
 import { forkJoin } from 'rxjs';
 import {MatIcon} from '@angular/material/icon';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-course-analytics',
   templateUrl: './course-analytics-page.component.html',
   standalone: true,
-  imports: [BaseChartDirective, CommonModule, MatIcon],
+  imports: [BaseChartDirective, CommonModule, MatIcon, TranslatePipe],
   styleUrl: './course-analytics-page.component.css'
 })
 export class CourseAnalyticsPage implements OnInit {
