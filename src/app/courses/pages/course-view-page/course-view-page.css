@@ -7,7 +7,7 @@ html, body {
 
 /* Panel Title */
 .panel-title {
-  background-color: #FAFAFA;
+  background-color: var(--custom-primary-color);
   align-content: center;
   height: 70px;
   width: 400px;
@@ -16,7 +16,7 @@ html, body {
 }
 
 .panel-title h1 {
-  color: #007bb5;
+  color: var(--custom-text-color);
   font-size: 1.5rem;
   margin: 0;
 }
@@ -31,7 +31,7 @@ html, body {
   gap: 10px;
   top: 90px;
   z-index: 500;
-  background-color: #d1ecf9;
+  background-color: var(--custom-bg-color);
   padding: 16px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -53,8 +53,8 @@ html, body {
 }
 
 .center-horizontally button {
-  background-color: #007bb5;
-  color: #ffffff;
+  background-color: var(--custom-primary-color);
+  color: var(--custom-text-color);
   border: none;
   padding: 8px 16px;
   border-radius: 4px;
@@ -71,7 +71,6 @@ html, body {
   flex-direction: column;
   gap: 24px;
   padding: 16px;
-  background-color: #eaf6fc;
   border-radius: 8px;
   height: 100%;
   flex-grow: 1;
@@ -87,20 +86,19 @@ html, body {
 }
 
 .left-panel {
-  flex: 7; /* 70% del ancho */
-  background-color: #ffffff;
+  flex: 7;
+  background-color: var(--custom-bg-color);
   padding: 16px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .right-panel {
-  flex: 3; /* 30% del ancho */
-  background-color: #e3f4fc; /* Celeste claro */
+  flex: 3;
+  background-color: var(--custom-bg-color); /* Celeste claro */
   padding: 16px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  border: 1px solid #cce7f6; /* Borde sutil */
 }
 
 .right-panel-content-container {
@@ -123,6 +121,7 @@ html, body {
 .right-panel-content-container .analytics-button {
   margin-top: auto;
   margin-bottom: 100px;
+  background-color: var(--custom-primary-color);
 }
 
 /* Info Section Right Panel */
@@ -139,7 +138,7 @@ app-assignment-list {
 }
 
 .members-button {
-  background-color: #007bb5;
+  background-color: var(--custom-primary-color);
   color: #ffffff;
   border: none;
   padding: 8px 16px;
@@ -157,7 +156,7 @@ app-assignment-list {
 .info-section-right-panel {
   margin-top: 25px;
   padding: 16px;
-  background-color: #ffffff; /* Fondo blanco */
+  background-color: var(--custom-primary-color);
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -165,19 +164,19 @@ app-assignment-list {
 
 .info-section-right-panel h1 {
   font-size: 24px;
-  color: #007bb5;
+  color: var(--custom-text-color);
   margin-bottom: 8px;
 }
 
 .info-section-right-panel h2 {
   font-size: 18px;
-  color: #555;
+  color: var(--custom-text-color);
   margin-bottom: 4px;
 }
 
 .info-section-right-panel p {
   font-size: 16px;
-  color: #666;
+  color: var(--custom-text-color);
   margin-top: 12px;
   line-height: 1.5;
 }

@@ -3,12 +3,15 @@
   max-width: 1100px;
   margin: 0 auto;
   font-family: 'Roboto', sans-serif;
+  background-color: var(--custom-bg-color);
+  color: var(--custom-text2-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  color: #333;
+  color: var(--custom-text2-color);
   text-align: center;
 }
 
@@ -21,14 +24,15 @@ h1 {
 }
 
 .stat-card {
-  background: #ffffff;
+  background: var(--custom-bg-color);
+  border: 1px solid var(--custom-border-color);
   border-radius: 8px;
   padding: 12px 16px;
   display: flex;
   align-items: center;
   gap: 10px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, background-color 0.3s, color 0.3s;
 }
 
 .stat-card:hover {
@@ -36,13 +40,13 @@ h1 {
 }
 
 .stat-card mat-icon {
-  color: #3f51b5;
+  color: var(--custom-primary-color);
 }
 
 .stat-number {
   font-size: 1.4rem;
   font-weight: bold;
-  color: #3f51b5;
+  color: var(--custom-primary-color);
   margin: 4px 0 0;
 }
 
@@ -56,39 +60,40 @@ h1 {
 }
 
 .chart-tabs button {
-  background: #f1f1f1;
+  background: var(--custom-border-color);
   border: none;
   border-radius: 20px;
   padding: 8px 16px;
   cursor: pointer;
   font-weight: 500;
-  color: #333;
-  transition: background 0.3s;
+  color: var(--custom-text2-color);
+  transition: background 0.3s, color 0.3s;
 }
 
 .chart-tabs button.active {
-  background: #3f51b5;
-  color: white;
+  background: var(--custom-primary-color);
+  color: var(--custom-text-color);
 }
 
 .chart-tabs button:hover {
-  background: #e0e0e0;
+  background: color-mix(in srgb, var(--custom-primary-color) 15%, var(--custom-bg-color));
 }
 
 /* === Chart container === */
 .chart-section {
-  background: white;
+  background: var(--custom-bg-color);
   border-radius: 10px;
   padding: 16px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+  border: 1px solid var(--custom-border-color);
 }
 
 .chart-container h2 {
   text-align: center;
   font-size: 1.2rem;
   margin-bottom: 10px;
-  color: #444;
+  color: var(--custom-text2-color);
 }
 
 /* === Detalle de asignaciones === */
@@ -97,11 +102,13 @@ h1 {
 }
 
 .assignment-card {
-  background: white;
+  background: var(--custom-bg-color);
   border-radius: 8px;
   padding: 12px 16px;
   margin-bottom: 10px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--custom-border-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .assignment-stats {
@@ -112,6 +119,6 @@ h1 {
 }
 
 .assignment-card h3 {
-  color: #3f51b5;
+  color: var(--custom-primary-color);
   margin-bottom: 6px;
 }

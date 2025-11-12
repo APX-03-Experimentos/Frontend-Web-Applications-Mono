@@ -10,6 +10,7 @@ import {LoadingService} from '../../../shared/services/loading.service';
 import {NotificationsBellComponent} from '../../../notifications/components/notification-bell/notification-bell';
 import {TranslatePipe} from '@ngx-translate/core';
 import {LanguageSwitcherComponent} from '../language-switcher/language-switcher.component';
+import {ThemeToggle} from '../../../shared/components/theme-toggle/theme-toggle';
 
 @Component({
   selector: 'app-navigator',
@@ -26,7 +27,8 @@ import {LanguageSwitcherComponent} from '../language-switcher/language-switcher.
     RouterLink,
     NotificationsBellComponent,
     TranslatePipe,
-    LanguageSwitcherComponent
+    LanguageSwitcherComponent,
+    ThemeToggle
   ],
   templateUrl: './navigator.html',
   standalone: true,
