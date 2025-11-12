@@ -9,6 +9,7 @@ import {Router, RouterLink, RouterOutlet} from '@angular/router';
 import {LoadingService} from '../../../shared/services/loading.service';
 import {NotificationsBellComponent} from '../../../notifications/components/notification-bell/notification-bell';
 import {TranslatePipe} from '@ngx-translate/core';
+import {LanguageSwitcherComponent} from '../language-switcher/language-switcher.component';
 
 @Component({
   selector: 'app-navigator',
@@ -24,7 +25,8 @@ import {TranslatePipe} from '@ngx-translate/core';
     MatButton,
     RouterLink,
     NotificationsBellComponent,
-    TranslatePipe
+    TranslatePipe,
+    LanguageSwitcherComponent
   ],
   templateUrl: './navigator.html',
   standalone: true,
