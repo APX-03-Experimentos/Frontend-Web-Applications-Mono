@@ -7,6 +7,7 @@
 .notification-item.unread {
   background-color: #e3f2fd; /* light blue for unread */
   font-weight: 500;
+  color: black;
 }
 
 .notification-item .notif-header {
