@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
   serverBaseUrl: "https://backend-web-services-1.onrender.com/api/v1",
-  websocketBaseUrl: 'ws://backend-web-services-1.onrender.com/ws-notifications',
+  websocketBaseUrl: 'wss://backend-web-services-1.onrender.com/ws-notifications',
   authenticationEndpointPath: '/authentication',
   usersEndpointPath: '/users',
   coursesEndpointPath: '/courses',
