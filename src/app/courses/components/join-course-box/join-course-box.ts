@@ -6,6 +6,7 @@ import {CoursesService} from '../../services/courses.service';
 import {LoadingService} from '../../../shared/services/loading.service';
 import {FormsModule} from '@angular/forms';
 import {join} from '@angular/compiler-cli';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-join-course-box',
@@ -14,7 +15,8 @@ import {join} from '@angular/compiler-cli';
     MatLabel,
     MatInput,
     MatButton,
-    FormsModule
+    FormsModule,
+    TranslatePipe
   ],
   templateUrl: './join-course-box.html',
   standalone: true,

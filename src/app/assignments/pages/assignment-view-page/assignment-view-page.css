@@ -3,7 +3,6 @@
   flex-direction: column;
   position: sticky;
   width: 100%;
-  top: 80px;
   z-index: 999;
 }
 
@@ -15,10 +14,12 @@
 .assignment-info-container {
   display: flex;
   flex-direction: row;
-  background-color: #a5d7f4;
+  background-color: var(--custom-primary-color);
   width: 100%;
   height: 40%;
   align-items: center;
+  padding-left: 100px;
+  color: var(--custom-text-color);
 }
 
 .assignment-info-container img {
@@ -97,12 +98,12 @@ app-assignment-view-page {
 }
 
 .blue {
-  color: #1976d2;
+  color: var(--custom-text-color);
 }
 
 .assignment-file-item a {
   text-decoration: none;
-  color: #1976d2;
+  color: var(--custom-text-color);
   font-weight: 500;
 }
 

@@ -6,13 +6,15 @@ import {LoadingService} from '../../../shared/services/loading.service';
 import {JoinCourseBox} from '../../components/join-course-box/join-course-box';
 import {TokenService} from '../../../shared/services/token.service';
 import {Router} from '@angular/router';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-courses-page',
   imports: [
     CreateCourseBox,
     CourseList,
-    JoinCourseBox
+    JoinCourseBox,
+    TranslatePipe
   ],
   templateUrl: './courses-page.html',
   standalone: true,

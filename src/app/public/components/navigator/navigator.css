@@ -6,8 +6,7 @@
 mat-sidenav {
   width: 220px;
   min-height: 100vh;
-  /* Degradado azul */
-  background: linear-gradient(to bottom, #1e90ff, #00bfff);
+  background: var(--custom-primary-color);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -111,7 +110,7 @@ mat-sidenav {
 }
 
 .toolbar {
-  background: linear-gradient(90deg, #3895d3 0%, #2566a6 100%);
+  background: var(--custom-primary-color);
   color: #fff;
   box-shadow: 0 2px 12px rgba(56,149,211,0.15);
   border-bottom: 2px solid #2566a6;
@@ -119,6 +118,9 @@ mat-sidenav {
   display: flex;
   align-items: center;
   padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
 .toolbar-title {

@@ -3,11 +3,13 @@ import {AssignmentsService} from '../../services/assignments.service';
 import {AssignmentItem} from '../assignment-item/assignment-item';
 import {Assignment} from '../../model/assignment.entity';
 import {LoadingService} from '../../../shared/services/loading.service';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-assignment-list',
   imports: [
-    AssignmentItem
+    AssignmentItem,
+    TranslatePipe
   ],
   templateUrl: './assignment-list.html',
   standalone: true,

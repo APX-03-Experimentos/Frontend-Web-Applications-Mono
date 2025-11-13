@@ -1,12 +1,12 @@
 <mat-dialog-content>
-  <h1>Crea un Curso</h1>
+  <h1>{{ "dashboard.create_course_heading" | translate }}</h1>
 
   <mat-form-field appearance="outline">
-    <mat-label>Título</mat-label>
+    <mat-label>{{ "dashboard.course_title_label" | translate }}</mat-label>
     <input
       matInput
       [(ngModel)]="title"
-      placeholder="Título del Curso"
+      placeholder="{{ 'dashboard.course_title_placeholder' | translate }}"
       maxlength="100"
       #titleInput="ngModel"
       required
@@ -15,7 +15,7 @@
 
     @if (titleInput.invalid && titleInput.touched) {
       <mat-error>
-        El título es obligatorio y no puede superar los 100 caracteres.
+        {{ "dashboard.course_title_error" | translate }}
       </mat-error>
     }
   </mat-form-field>
@@ -27,11 +27,11 @@
       color="primary"
       [disabled]="!title || title.length > 100"
     >
-      Crear
+      {{ "dashboard.create_button" | translate }}
     </button>
 
     <button mat-button (click)="Cancel()" color="secondary">
-      Cancelar
+      {{ "dashboard.cancel_button" | translate }}
     </button>
   </div>
 </mat-dialog-content>

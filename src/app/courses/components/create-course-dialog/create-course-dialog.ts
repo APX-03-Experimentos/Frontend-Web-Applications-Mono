@@ -6,6 +6,7 @@ import {MatInput} from '@angular/material/input';
 import {LoadingService} from '../../../shared/services/loading.service';
 import {CoursesService} from '../../services/courses.service';
 import {FormsModule} from '@angular/forms';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-create-course-dialog',
@@ -17,7 +18,8 @@ import {FormsModule} from '@angular/forms';
     MatInput,
     FormsModule,
     MatHint,
-    MatError
+    MatError,
+    TranslatePipe
   ],
   templateUrl: './create-course-dialog.html',
   standalone: true,

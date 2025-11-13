@@ -1,12 +1,14 @@
 <mat-card class="assignment-card" appearance="raised">
   <div class="card-content">
     <div class="info-section">
-      <h2>{{assignment?.title}}</h2>
-      <p>{{assignment?.description}}</p>
-      <p>Vence el: {{GetFormattedDate()}}</p>
+      <h2>{{ assignment?.title }}</h2>
+      <p>{{ assignment?.description }}</p>
+      <p>{{ "course_page.assignment_due" | translate }} {{ GetFormattedDate() }}</p>
     </div>
     <div class="actions-section">
-      <button mat-raised-button [routerLink]="['/assignment',this.assignment?.id]" color="primary">Ver</button>
+      <button mat-raised-button [routerLink]="['/assignment', this.assignment?.id]" color="primary">
+        <mat-icon>search</mat-icon> {{ "course_page.assignment_view" | translate }}
+      </button>
     </div>
   </div>
 </mat-card>

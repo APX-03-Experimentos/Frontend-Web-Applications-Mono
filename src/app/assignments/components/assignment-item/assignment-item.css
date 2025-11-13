@@ -1,6 +1,6 @@
 .assignment-card {
   padding: 20px;
-  background-color: #e3f4fc; /* Fondo celeste claro */
+  background-color: var(--custom-primary-color);
   border-radius: 8px; /* Bordes redondeados */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
   margin-bottom: 16px; /* Espaciado entre tarjetas */
@@ -20,13 +20,13 @@
 
 .info-section h2 {
   font-size: 20px;
-  color: #007bb5; /* Azul para el título */
+  color: var(--custom-text-color);
   margin-bottom: 8px;
 }
 
 .info-section p {
   font-size: 16px;
-  color: #555; /* Gris para el texto */
+  color: var(--custom-text-color);
   margin: 4px 0;
 }
 

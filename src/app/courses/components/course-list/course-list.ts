@@ -3,11 +3,13 @@ import {CoursesService} from '../../services/courses.service';
 import {Course} from '../../model/course.entity';
 import {LoadingService} from '../../../shared/services/loading.service';
 import {CourseItem} from '../course-item/course-item';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-course-list',
   imports: [
-    CourseItem
+    CourseItem,
+    TranslatePipe
   ],
   templateUrl: './course-list.html',
   standalone: true,

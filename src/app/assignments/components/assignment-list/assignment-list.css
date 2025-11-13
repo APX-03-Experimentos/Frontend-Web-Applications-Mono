@@ -12,7 +12,7 @@
   display: grid;
   gap: 16px;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: var(--custom-bg-color);
   border-radius: 12px;
 }
 

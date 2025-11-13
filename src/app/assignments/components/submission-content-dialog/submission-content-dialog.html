@@ -1,11 +1,11 @@
-<mat-dialog-content>
-  <p>
-    {{ data.submission.content }}
-  </p>
-  @if (data.submission?.fileUrls?.length)
-  {
+<mat-dialog-content class="submission-dialog-content">
+  <div class="submission-text">
+    <p>{{ data.submission.content }}</p>
+  </div>
+
+  @if (data.submission?.fileUrls?.length) {
     <div class="assignment-files-container">
-      <h3>Archivos adjuntos:</h3>
+      <h3>{{ "assignment_page.submission_files" | translate }}</h3>
       <ul class="assignment-files-list">
         @for (fileUrl of data.submission?.fileUrls; track fileUrl) {
           <li class="assignment-file-item">
@@ -18,32 +18,25 @@
       </ul>
     </div>
   }
-
 </mat-dialog-content>
 
-<mat-dialog-actions>
+<mat-dialog-actions align="end" class="submission-dialog-actions">
   @if (userRole === "ROLE_TEACHER") {
-    <form [formGroup]="gradeForm" (ngSubmit)="submitGrade()">
-      <mat-form-field appearance="outline">
-        <mat-label>Calificar</mat-label>
-        <input matInput type="number" formControlName="grade">
-        @if (gradeForm.controls['grade'].hasError('min'))
-        {
-          <mat-error>
-            La nota mínima es 0
-          </mat-error>
+    <form [formGroup]="gradeForm" (ngSubmit)="submitGrade()" class="grade-form">
+      <mat-form-field appearance="outline" class="grade-field">
+        <mat-label>{{ "assignment_page.grade_label" | translate }}</mat-label>
+        <input matInput type="number" formControlName="grade" placeholder="{{ 'assignment_page.grade_placeholder' | translate }}" />
+
+        @if (gradeForm.controls['grade'].hasError('min')) {
+          <mat-error>{{ "assignment_page.grade_min_error" | translate }}</mat-error>
         }
-        @if (gradeForm.controls['grade'].hasError('max'))
-        {
-          <mat-error>
-            La nota máxima es 20
-          </mat-error>
+        @if (gradeForm.controls['grade'].hasError('max')) {
+          <mat-error>{{ "assignment_page.grade_max_error" | translate }}</mat-error>
         }
       </mat-form-field>
 
-      <button mat-flat-button color="primary" type="submit"
-              [disabled]="gradeForm.invalid">
-        Calificar
+      <button mat-flat-button color="primary" type="submit" [disabled]="gradeForm.invalid">
+        {{ "assignment_page.grade_button" | translate }}
       </button>
     </form>
   }

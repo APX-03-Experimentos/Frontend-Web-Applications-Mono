@@ -7,7 +7,9 @@ import { Notification } from '../../model/notification.entity';
 import { MatMenu, MatMenuItem, MatMenuTrigger } from '@angular/material/menu';
 import { MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
-import {DatePipe, NgForOf, NgIf, SlicePipe} from '@angular/common';
+import {DatePipe, SlicePipe} from '@angular/common';
+import {TranslatePipe} from '@ngx-translate/core';
+import {MatTooltip} from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-notifications-bell',
@@ -21,9 +23,9 @@ import {DatePipe, NgForOf, NgIf, SlicePipe} from '@angular/common';
     SlicePipe,
     DatePipe,
     MatMenu,
-    NgIf,
     MatMenuItem,
-    NgForOf
+    TranslatePipe,
+    MatTooltip
   ]
 })
 export class NotificationsBellComponent implements OnInit, OnDestroy {

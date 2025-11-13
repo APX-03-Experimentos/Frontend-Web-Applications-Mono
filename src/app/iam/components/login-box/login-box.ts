@@ -9,6 +9,8 @@ import {FormsModule} from '@angular/forms';
 import {TokenService} from '../../../shared/services/token.service';
 import {LoadingService} from '../../../shared/services/loading.service';
 import {Router} from '@angular/router';
+import {TranslatePipe} from '@ngx-translate/core';
+import {MatIcon} from '@angular/material/icon';
 
 @Component({
   selector: 'app-login-box',
@@ -19,7 +21,9 @@ import {Router} from '@angular/router';
     MatInput,
     MatLabel,
     MatButton,
-    FormsModule
+    FormsModule,
+    TranslatePipe,
+    MatIcon
   ],
   templateUrl: './login-box.html',
   standalone: true,

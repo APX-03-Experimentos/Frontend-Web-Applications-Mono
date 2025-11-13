@@ -8,13 +8,15 @@ import {AuthService} from '../../../iam/services/auth.service';
 import {LoadingService} from '../../../shared/services/loading.service';
 import {MatDialog} from '@angular/material/dialog';
 import {SubmissionContentDialog} from '../submission-content-dialog/submission-content-dialog';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-submission-item',
   imports: [
     MatCard,
     MatButton,
-    MatIcon
+    MatIcon,
+    TranslatePipe
   ],
   templateUrl: './submission-item.html',
   standalone: true,

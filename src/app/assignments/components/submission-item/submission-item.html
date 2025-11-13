@@ -2,23 +2,25 @@
   <div class="card-header">
     <mat-icon class="icon">person</mat-icon>
     <div class="card-info-column">
-      <h1>Estudiante: {{owner?.userName}}</h1>
+      <h1>{{ "assignment_page.submission_student" | translate }} {{ owner?.userName }}</h1>
     </div>
   </div>
+
   <div class="card-body">
-    <h2>Calificación:
-      @if (submission?.status === "NOT_GRADED")
-      {
-        Ninguna
-      } @else if (submission?.status === "GRADED")
-      {
-        {{submission?.score}}
+    <h2>
+      {{ "assignment_page.submission_grade" | translate }}
+      @if (submission?.status === "NOT_GRADED") {
+        {{ "assignment_page.submission_none" | translate }}
+      } @else if (submission?.status === "GRADED") {
+        {{ submission?.score }}
       }
     </h2>
   </div>
+
   <div class="card-actions">
     <button mat-raised-button (click)="OpenContent()">
-      <mat-icon>visibility</mat-icon> Ver
+      <mat-icon>visibility</mat-icon>
+      {{ "assignment_page.submission_view" | translate }}
     </button>
   </div>
 </mat-card>

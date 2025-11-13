@@ -2,12 +2,12 @@
   <div class="main card">
     <img ngSrc="/assets/learnhive_logo_transparent.png" alt="Logo LearnHive" height="200" width="200" priority>
 
-    <h2>Bienvenido a LearnHive</h2>
-    <h4>Plataforma integral de análisis y gestión educativa.</h4>
+    <h2>{{"auth_page.welcome" | translate}}</h2>
+    <h4>{{"auth_page.description" | translate}}</h4>
 
     <mat-button-toggle-group name="authType" aria-label="Tipo de Autenticación" value="login" [(ngModel)]="authType">
-      <mat-button-toggle value="login">Iniciar Sesión</mat-button-toggle>
-      <mat-button-toggle value="register">Registrarse</mat-button-toggle>
+      <mat-button-toggle value="login">{{"auth_page.login" | translate}}</mat-button-toggle>
+      <mat-button-toggle value="register">{{"auth_page.signup" | translate}}</mat-button-toggle>
     </mat-button-toggle-group>
 
     @if (authType == "login")
