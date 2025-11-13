@@ -1,9 +1,9 @@
 <div class="course-cards-container">
   @if (courses.length === 0) {
     <div class="empty-course-list">
-      <img src="assets/imagen_1.png" alt="Sin cursos" class="empty-bg" />
-      <h2>No tienes cursos aún</h2>
-      <p>Usa el botón para agregar o unirte a un curso.</p>
+      <img src="assets/imagen_1.png" alt="{{ 'dashboard.no_courses_alt' | translate }}" class="empty-bg" />
+      <h2>{{ "dashboard.no_courses_title" | translate }}</h2>
+      <p>{{ "dashboard.no_courses_description" | translate }}</p>
     </div>
   }
   @for (course of courses; track course.courseId) {

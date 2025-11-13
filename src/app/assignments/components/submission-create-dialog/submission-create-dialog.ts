@@ -8,6 +8,7 @@ import {AssignmentsService} from '../../services/assignments.service';
 import {SubmissionsService} from '../../services/submissions.service';
 import {LoadingService} from '../../../shared/services/loading.service';
 import {FormsModule} from '@angular/forms';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-submission-create-dialog',
@@ -18,7 +19,8 @@ import {FormsModule} from '@angular/forms';
     MatLabel,
     MatDialogActions,
     MatButton,
-    FormsModule
+    FormsModule,
+    TranslatePipe
   ],
   templateUrl: './submission-create-dialog.html',
   standalone: true,

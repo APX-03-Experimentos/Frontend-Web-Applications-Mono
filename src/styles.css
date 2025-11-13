@@ -8,6 +8,6 @@ body {
 
 
 .sidenav-container {
-  background: linear-gradient(135deg, #f6fafd 0%, #e2eff8 100%);
+  background: var(--custom-bg-color);
   min-height: 100vh;
 }

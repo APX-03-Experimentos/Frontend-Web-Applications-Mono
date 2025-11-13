@@ -1,38 +1,39 @@
 <mat-card>
   <div class="title">
-    <h3>Crear Cuenta</h3>
-    <h4>Únete a LearnHive como estudiante o profesor</h4>
+    <h3>{{'auth_page.signup' | translate}}</h3>
+    <h4>{{'auth_page.signup_description' | translate}}</h4>
   </div>
 
   <mat-card-content>
-    <h4 style="text-align: start">Tipo de usuario:</h4>
+    <h4 style="text-align: start">{{'auth_page.user_type' | translate}}</h4>
     <mat-button-toggle-group name="authType" aria-label="Tipo de Autenticación" [(ngModel)]="userType">
-      <mat-button-toggle value="ROLE_STUDENT">Estudiante</mat-button-toggle>
-      <mat-button-toggle value="ROLE_TEACHER">Profesor</mat-button-toggle>
+      <mat-button-toggle value="ROLE_STUDENT"><mat-icon style="margin-right: 5px">person</mat-icon>{{'auth_page.student' | translate}}</mat-button-toggle>
+      <mat-button-toggle value="ROLE_TEACHER"><mat-icon style="margin-right: 5px">person_4</mat-icon>{{'auth_page.teacher' | translate}}</mat-button-toggle>
     </mat-button-toggle-group>
+
     <form>
       <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Nombre de Usuario</mat-label>
-        <input matInput [(ngModel)]="username" name="username" placeholder="Ingresa tu nombre de usuario" required>
+        <mat-label>{{'auth_page.username' | translate}}</mat-label>
+        <input matInput [(ngModel)]="username" name="username" placeholder="{{'auth_page.username_placeholder' | translate}}" required>
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Contraseña</mat-label>
-        <input matInput (ngModelChange)="passwordsMatch = true" [(ngModel)]="password" name="password" type="password" placeholder="Ingresa tu contraseña" required>
+        <mat-label>{{"auth_page.password" | translate}}</mat-label>
+        <input matInput (ngModelChange)="passwordsMatch = true" [(ngModel)]="password" name="password" type="password" placeholder="{{'auth_page.password_placeholder' | translate}}" required>
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Confirmar Contraseña</mat-label>
-        <input matInput (ngModelChange)="passwordsMatch = true" [(ngModel)]="confirmPassword" name="confirmPassword" type="password" placeholder="Confirma tu contraseña" required>
+        <mat-label>{{'auth_page.confirm_password' | translate}}</mat-label>
+        <input matInput (ngModelChange)="passwordsMatch = true" [(ngModel)]="confirmPassword" name="confirmPassword" type="password" placeholder="{{'auth_page.confirm_password_placeholder' | translate}}" required>
       </mat-form-field>
-      @if (!passwordsMatch) { <p>Las contraseñas no coinciden.</p> }
+      @if (!passwordsMatch) { <p>{{'auth_page.passwords_not_match' | translate}}</p> }
 
       <button mat-raised-button color="primary" class="full-width" (click)="SignUp()">
-        Registrarse
+        {{'auth_page.signup' | translate}}<mat-icon>how_to_reg</mat-icon>
       </button>
 
       <p class="forgot-password">
-        Al registrarte, aceptas nuestros términos de servicio y política de privacidad.
+        {{'auth_page.accept_tos' | translate}}
       </p>
     </form>
   </mat-card-content>

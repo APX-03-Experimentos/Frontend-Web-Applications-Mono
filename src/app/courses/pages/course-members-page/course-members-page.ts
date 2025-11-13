@@ -6,10 +6,13 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {User} from '../../../iam/model/user.entity';
 import {CoursesService} from '../../services/courses.service';
 import {Course} from '../../model/course.entity';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-course-members-page',
-  imports: [],
+  imports: [
+    TranslatePipe
+  ],
   templateUrl: './course-members-page.html',
   standalone: true,
   styleUrl: './course-members-page.css'

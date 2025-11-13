@@ -38,4 +38,12 @@ export class AssignmentsService extends BaseService<Assignment>{
     return this.http.post<String[]>(`${this.resourcePath()}/${id}/files`, formData, this.fileHttpOptions)
   }
 
+  RemoveFileFromAssignment(assignmentId: number, fileUrl: string): Observable<void> {
+    const encodedUrl = encodeURIComponent(fileUrl);
+    return this.http.delete<void>(
+      `${this.resourcePath()}/${assignmentId}/files?fileUrl=${encodedUrl}`,
+      this.httpOptions
+    );
+  }
+
 }

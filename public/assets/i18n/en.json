@@ -1,0 +1,135 @@
+{
+  "auth_page": {
+    "welcome": "Welcome to LearnHive",
+    "description": "Comprehensive platform for educational analysis and management.",
+    "login": "Log In",
+    "login_description": "Enter your credentials to access your account.",
+    "signup": "Sign Up",
+    "signup_description": "Join LearnHive as a student or teacher.",
+
+    "user_type": "User Type",
+
+    "student": "Student",
+    "teacher": "Teacher",
+
+    "username": "Username",
+    "username_placeholder": "Enter your username",
+
+    "password": "Password",
+    "password_placeholder": "Enter your password",
+
+    "confirm_password": "Confirm Password",
+    "confirm_password_placeholder": "Re-enter your password",
+
+    "invalid_credentials": "Invalid username or password.",
+
+    "forgot_password": "Forgot your password?",
+
+    "accept_tos": "By signing up, you agree to our Terms of Service and Privacy Policy.",
+
+    "passwords_not_match": "Passwords do not match."
+  },
+  "dashboard": {
+    "your_courses": "Your Courses:",
+    "no_courses_alt": "No Courses",
+    "no_courses_title": "You don’t have any courses yet",
+    "no_courses_description": "Use the button to add or join a course.",
+    "course_key": "Key:",
+    "view_course": "View",
+    "create_course_title": "Create a Course:",
+    "create_course_heading": "Create a Course",
+    "course_title_label": "Title",
+    "course_title_placeholder": "Course Title",
+    "course_title_error": "The title is required and cannot exceed 100 characters.",
+    "create_button": "Create",
+    "cancel_button": "Cancel",
+    "join_course_title": "Join a Course:",
+    "join_code_label": "Join Code",
+    "join_code_placeholder": "Code",
+    "join_button": "Join"
+  },
+  "nav": {
+    "courses": "Courses",
+    "logout": "Log Out",
+    "toggle_menu": "Toggle sidebar menu",
+    "go_back": "Go Back"
+  },
+  "course_page": {
+    "assignment_panel": "Assignment Panel",
+    "add_assignment": "Add Assignment",
+    "student_label": "Student",
+    "course_info_title": "Course Information",
+    "teacher_label": "Teacher:",
+    "course_description": "This course is designed to help you reach your academic goals.",
+    "view_members": "View Course Members",
+    "view_performance": "View Course Performance",
+    "teacher_section_title": "Teacher",
+    "students_section_title": "Students",
+    "username_header": "Username",
+    "actions_header": "Actions",
+    "loading_teacher": "Loading teacher...",
+    "kick_button": "Remove",
+    "no_students": "No students registered.",
+    "no_assignments_alt": "No Courses",
+    "no_assignments_title": "No assignments available yet",
+    "no_assignments_message": "When assignments are published, they will appear here.",
+    "assignment_due": "Due on:",
+    "assignment_view": "View",
+    "create_assignment_title": "Create an Assignment",
+    "assignment_title_label": "Title",
+    "assignment_title_placeholder": "Assignment title",
+    "assignment_description_label": "Description",
+    "assignment_description_placeholder": "Assignment description",
+    "assignment_files_title": "Files",
+    "assignment_deadline_label": "Deadline",
+    "assignment_deadline_placeholder": "Select a date",
+    "cancel": "Cancel",
+    "save": "Save"
+  },
+  "assignment_page": {
+    "deadline_label": "Due on:",
+    "attached_files": "Attached Files:",
+    "your_submissions": "Your Submissions:",
+    "add_submission": "Add Submission",
+    "submissions": "Submissions:",
+    "add_file_to_assignment": "Add File to Assignment",
+    "no_submissions_title": "No submissions yet",
+    "no_submissions_description": "When students submit their work, it will appear here.",
+    "submission_student": "Student:",
+    "submission_grade": "Grade:",
+    "submission_none": "None",
+    "submission_view": "View",
+    "submission_files": "Attached Files:",
+    "grade_label": "Grade",
+    "grade_placeholder": "Enter a score",
+    "grade_min_error": "Minimum grade is 0",
+    "grade_max_error": "Maximum grade is 20",
+    "grade_button": "Grade",
+    "submit_title": "Submit Your Work",
+    "submit_content_label": "Content",
+    "submit_content_placeholder": "Write your response or comments",
+    "submit_files_label": "Files",
+    "submit_cancel": "Cancel",
+    "submit_send": "Send"
+  },
+  "analytics_page": {
+    "title": "Course Analytics",
+    "total_students": "Total Students",
+    "students_label": "students",
+    "total_assignments": "Total Assignments",
+    "assignments_label": "assignments",
+    "total_submissions": "Submissions Made",
+    "submissions_label": "submissions",
+    "overall_average": "Overall Average",
+    "assignment_detail": "Assignment Details",
+    "submissions": "Submissions",
+    "average": "Average",
+    "deadline": "Deadline"
+  },
+  "notifications": {
+    "button_label": "Notifications",
+    "mark_read_tooltip": "Mark as read",
+    "mark_all_read": "Mark all as read",
+    "no_notifications": "No notifications"
+  }
+}

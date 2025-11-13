@@ -1,0 +1,138 @@
+{
+  "auth_page": {
+    "welcome": "Bienvenido a LearnHive",
+    "description": "Plataforma integral de análisis y gestión educativa.",
+    "login": "Iniciar Sesión",
+    "login_description": "Ingresa tus credenciales para acceder a tu cuenta.",
+    "signup": "Registrarse",
+    "signup_description": "Únete a LearnHive como estudiante o profesor",
+
+    "user_type": "Tipo de Usuario",
+
+    "student": "Estudiante",
+    "teacher": "Profesor",
+
+    "username": "Nombre de usuario",
+    "username_placeholder": "Ingresa tu nombre de usuario",
+
+    "password": "Contraseña",
+    "password_placeholder": "Ingresa tu contraseña",
+
+    "confirm_password": "Confirmar Contraseña",
+    "confirm_password_placeholder": "Confirma tu contraseña",
+
+    "invalid_credentials": "El usuario o la contraseña son incorrectos.",
+
+    "forgot_password": "¿Olvidaste tu contraseña?",
+
+    "accept_tos": "Al registrarte, aceptas nuestros Términos de Servicio y Política de Privacidad.",
+
+    "passwords_not_match": "Las contraseñas no coinciden."
+  },
+  "dashboard": {
+    "your_courses": "Tus cursos:",
+    "no_courses_alt": "Sin cursos",
+    "no_courses_title": "No tienes cursos aún",
+    "no_courses_description": "Usa el botón para agregar o unirte a un curso.",
+    "course_key": "Clave:",
+    "view_course": "Ver",
+    "create_course_title": "Crear un Curso:",
+    "create_course_heading": "Crea un Curso",
+    "course_title_label": "Título",
+    "course_title_placeholder": "Título del Curso",
+    "course_title_error": "El título es obligatorio y no puede superar los 100 caracteres.",
+    "create_button": "Crear",
+    "cancel_button": "Cancelar",
+    "join_course_title": "Unirse a un Curso:",
+    "join_code_label": "Código de Unión",
+    "join_code_placeholder": "Código",
+    "join_button": "Unirse"
+  },
+  "nav": {
+    "courses": "Cursos",
+    "logout": "Cerrar Sesión",
+    "toggle_menu": "Alternar menú lateral",
+    "go_back": "Regresar"
+  },
+  "course_page": {
+    "assignment_panel": "Panel de Tareas",
+    "add_assignment": "Agregar Tarea",
+    "student_label": "Estudiante",
+    "course_info_title": "Información del curso",
+    "teacher_label": "Profesor:",
+    "course_description": "Este curso está diseñado para ayudarte a alcanzar tus metas académicas.",
+    "view_members": "Ver integrantes del curso",
+    "view_performance": "Ver desempeño del curso",
+    "teacher_section_title": "Profesor",
+    "students_section_title": "Estudiantes",
+    "username_header": "Nombre de Usuario",
+    "actions_header": "Acciones",
+    "loading_teacher": "Cargando profesor...",
+    "kick_button": "Expulsar",
+    "no_students": "No hay estudiantes registrados.",
+    "no_assignments_alt": "Sin cursos",
+    "no_assignments_title": "Aún no hay tareas disponibles",
+    "no_assignments_message": "Cuando se publiquen tareas, aparecerán aquí.",
+    "assignment_due": "Vence el:",
+    "assignment_view": "Ver",
+    "create_assignment_title": "Crear una Tarea",
+    "assignment_title_label": "Título",
+    "assignment_title_placeholder": "Título de la tarea",
+    "assignment_description_label": "Descripción",
+    "assignment_description_placeholder": "Descripción de la tarea",
+    "assignment_files_title": "Archivos",
+    "assignment_deadline_label": "Fecha límite",
+    "assignment_deadline_placeholder": "Selecciona una fecha",
+    "cancel": "Cancelar",
+    "save": "Guardar"
+  },
+  "assignment_page": {
+    "deadline_label": "Vence el:",
+    "attached_files": "Archivos adjuntos:",
+    "your_submissions": "Tus entregas:",
+    "add_submission": "Añadir Entrega",
+    "submissions": "Entregas:",
+    "add_file_to_assignment": "Añadir archivo a la tarea",
+    "no_submissions_title": "Aún no hay entregas",
+    "no_submissions_description": "Cuando los estudiantes realicen entregas, aparecerán aquí.",
+    "submission_student": "Estudiante:",
+    "submission_grade": "Calificación:",
+    "submission_none": "Ninguna",
+    "submission_view": "Ver",
+    "submission_files": "Archivos adjuntos:",
+    "grade_label": "Calificación",
+    "grade_placeholder": "Ingresa una nota",
+    "grade_min_error": "La nota mínima es 0",
+    "grade_max_error": "La nota máxima es 20",
+    "grade_button": "Calificar",
+    "submit_title": "Entrega tu Trabajo",
+    "submit_content_label": "Contenido",
+    "submit_content_placeholder": "Escribe tu respuesta o comentarios",
+    "submit_files_label": "Archivos",
+    "submit_cancel": "Cancelar",
+    "submit_send": "Enviar"
+  },
+  "analytics_page": {
+    "title": "Análisis del Curso",
+    "total_students": "Total de Estudiantes",
+    "students_label": "alumnos",
+    "total_assignments": "Total de Asignaciones",
+    "assignments_label": "tareas",
+    "total_submissions": "Entregas Realizadas",
+    "submissions_label": "entregas",
+    "overall_average": "Promedio General",
+    "assignment_detail": "Detalle por Asignación",
+    "submissions": "Entregas",
+    "average": "Promedio",
+    "deadline": "Fecha límite"
+  },
+  "notifications": {
+    "button_label": "Notificaciones",
+    "mark_read_tooltip": "Marcar como leída",
+    "mark_all_read": "Marcar todas como leídas",
+    "no_notifications": "Sin notificaciones"
+  }
+
+
+
+}

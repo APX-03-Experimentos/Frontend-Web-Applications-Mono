@@ -1,10 +1,16 @@
 <div class="join-code-section">
   <div class="join-group-container">
-    <h2 style="margin: 0;">Unirse a un Curso: </h2>
+    <h2 style="margin: 0;">{{ "dashboard.join_course_title" | translate }}</h2>
     <mat-form-field>
-      <mat-label>Código de Unión</mat-label>
-      <input matInput [(ngModel)]="key" placeholder="Código">
+      <mat-label>{{ "dashboard.join_code_label" | translate }}</mat-label>
+      <input
+        matInput
+        [(ngModel)]="key"
+        placeholder="{{ 'dashboard.join_code_placeholder' | translate }}"
+      >
     </mat-form-field>
-    <button mat-flat-button (click)="Join()">Unirse</button>
+    <button mat-flat-button (click)="Join()">
+      {{ "dashboard.join_button" | translate }}
+    </button>
   </div>
 </div>

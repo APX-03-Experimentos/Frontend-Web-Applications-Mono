@@ -1,16 +1,16 @@
 <mat-card>
     <div class="title">
-      <h3>Iniciar Sesión</h3>
-      <h4>Ingresa tus credenciales para acceder</h4>
+      <h3>{{"auth_page.login" | translate}}</h3>
+      <h4>{{"auth_page.login_description" | translate}}</h4>
     </div>
 
   <mat-card-content>
     <form>
       <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Correo electrónico</mat-label>
+        <mat-label>{{"auth_page.username" | translate}}</mat-label>
         <input
           matInput
-          placeholder="Ingresa tu correo electrónico"
+          placeholder="{{'auth_page.username_placeholder' | translate}}"
           (change)="invalidCredentials = false"
           [(ngModel)]="username"
           name="username"
@@ -19,11 +19,11 @@
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Contraseña</mat-label>
+        <mat-label>{{"auth_page.password" | translate}}</mat-label>
         <input
           matInput
           type="password"
-          placeholder="Ingresa tu contraseña"
+          placeholder="{{'auth_page.password_placeholder' | translate}}"
           (change)="invalidCredentials = false"
           [(ngModel)]="password"
           name="password"
@@ -33,15 +33,15 @@
 
       @if (invalidCredentials)
       {
-        <p class="red-text">El usuario o la contraseña son incorrectos.</p>
+        <p class="red-text">{{"auth_page.invalid_credentials" | translate}}</p>
       }
 
       <button mat-raised-button color="primary" class="full-width" (click)="LogIn()">
-        Iniciar Sesión
+        {{"auth_page.login" | translate}}<mat-icon>login</mat-icon>
       </button>
 
       <p class="forgot-password">
-        <a href="#">¿Olvidaste tu contraseña?</a>
+        <a href="#">{{'auth_page.forgot_password' | translate}}</a>
       </p>
     </form>
   </mat-card-content>

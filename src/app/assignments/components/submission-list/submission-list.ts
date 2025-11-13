@@ -3,11 +3,13 @@ import {SubmissionItem} from '../submission-item/submission-item';
 import {SubmissionsService} from '../../services/submissions.service';
 import {LoadingService} from '../../../shared/services/loading.service';
 import {Submission} from '../../model/submission.entity';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-submission-list',
   imports: [
-    SubmissionItem
+    SubmissionItem,
+    TranslatePipe
   ],
   templateUrl: './submission-list.html',
   standalone: true,

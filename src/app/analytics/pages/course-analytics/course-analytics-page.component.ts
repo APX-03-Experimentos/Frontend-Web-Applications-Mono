@@ -13,12 +13,14 @@ import { ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { CommonModule } from '@angular/common';
 import { forkJoin } from 'rxjs';
+import {MatIcon} from '@angular/material/icon';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-course-analytics',
   templateUrl: './course-analytics-page.component.html',
   standalone: true,
-  imports: [BaseChartDirective, CommonModule],
+  imports: [BaseChartDirective, CommonModule, MatIcon, TranslatePipe],
   styleUrl: './course-analytics-page.component.css'
 })
 export class CourseAnalyticsPage implements OnInit {
@@ -27,6 +29,15 @@ export class CourseAnalyticsPage implements OnInit {
   students: User[] = [];
   assignments: Assignment[] = [];
   submissions: Submission[] = [];
+
+  selectedTab = 0;
+
+  chartTabs = [
+    { label: 'Porcentaje de Entregas' },
+    { label: 'Promedio por Asignación' },
+    { label: 'Estado de Calificaciones' },
+    { label: 'Distribución de Calificaciones' }
+  ];
 
   assignmentSubmissionRate: number[] = [];
   averageScores: number[] = [];
