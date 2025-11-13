@@ -18,7 +18,14 @@ export class App implements OnInit{
   }
 
   ngOnInit() {
+    var prefLang = localStorage.getItem('pref_lang')
     this.translate.setDefaultLang('es');
-    this.translate.use('es');
+    if (prefLang != null) {
+      this.translate.use(prefLang);
+    } else {
+      this.translate.use('es')
+    }
+
+
   }
 }

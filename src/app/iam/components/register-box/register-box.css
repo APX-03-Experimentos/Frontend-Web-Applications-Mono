@@ -1,121 +1,155 @@
-  /* src/app/iam/components/register-box/register-box.css */
-  :host {
-    display: block;
-  }
+/* src/app/iam/components/register-box/register-box.css */
+:host {
+  display: block;
+}
 
-  /* Evita "doble tarjeta" y compacta el contenedor */
-  mat-card {
+/* Evita "doble tarjeta" y compacta el contenedor */
+mat-card {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+/* Elimina padding interno del contenido de la card */
+mat-card-content {
+  padding: 0;
+}
+
+/* Cabecera del registro */
+.title {
+  margin-bottom: 8px;
+  text-align: center;
+}
+.title h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #0f3257;
+  font-weight: 700;
+}
+.title h4 {
+  margin: 2px 0 0;
+  font-size: 0.92rem;
+  color: #3e6b8f;
+  font-weight: 500;
+}
+
+/* Subtítulo dentro del contenido (e.g., "Tipo de usuario") */
+mat-card-content > h4 {
+  margin: 8px 0 6px;
+  text-align: start;
+  font-size: 0.95rem;
+  color: #0f3257;
+  font-weight: 600;
+}
+
+/* Formulario compacto con separación uniforme */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Selector de tipo de usuario */
+mat-button-toggle-group {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* ambos con el mismo ancho */
+  gap: 8px;                       /* separa los toggles */
+  background: transparent;
+  border: 0;
+  margin-bottom: 8px;             /* más aire debajo */
+}
+mat-button-toggle {
+  width: 100%;
+  min-height: 40px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  border: 2px solid #b5c6d6; /* borde gris claro siempre visible */
+  background: #fff;
+  color: #0f3257;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+mat-button-toggle.mat-button-toggle-checked {
+  background: #3895d3;
+  color: #fff;
+  border: 2px solid #2566a6;
+  box-shadow: 0 2px 8px rgba(56,149,211,0.10);
+}
+
+/* Campos y botón a ancho completo */
+.full-width {
+  width: 100%;
+  margin: 0; /* el gap del form maneja el espacio */
+}
+
+/* Botón primario */
+button.full-width {
+  height: 40px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+/* Mensaje de error (contraseñas no coinciden) */
+form > p:not(.forgot-password) {
+  color: #d32f2f;
+  font-size: 12px;
+  margin: -4px 0 0; /* acerca el error al campo */
+}
+
+/* Nota inferior */
+.forgot-password {
+  margin-top: 4px;
+  font-size: 12px;
+  text-align: center;
+}
+.forgot-password a {
+  color: #2b6cb0;
+  text-decoration: none;
+}
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+  .fake-recaptcha {
     width: 100%;
-    max-width: 360px;
-    margin: 0 auto;
-    padding: 0;
-    background: transparent;
-    border: 0;
-    box-shadow: none;
-  }
-
-  /* Elimina padding interno del contenido de la card */
-  mat-card-content {
-    padding: 0;
-  }
-
-  /* Cabecera del registro */
-  .title {
-    margin-bottom: 8px;
-    text-align: center;
-  }
-  .title h3 {
-    margin: 0;
-    font-size: 1.25rem;
-    color: #0f3257;
-    font-weight: 700;
-  }
-  .title h4 {
-    margin: 2px 0 0;
-    font-size: 0.92rem;
-    color: #3e6b8f;
-    font-weight: 500;
-  }
-
-  /* Subtítulo dentro del contenido (e.g., "Tipo de usuario") */
-  mat-card-content > h4 {
-    margin: 8px 0 6px;
-    text-align: start;
-    font-size: 0.95rem;
-    color: #0f3257;
-    font-weight: 600;
-  }
-
-  /* Formulario compacto con separación uniforme */
-  form {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
+    justify-content: center;
+    margin: 16px 0 24px 0;
   }
 
-  /* Selector de tipo de usuario */
-  mat-button-toggle-group {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    background: transparent;
-    border: 0;
-    margin-bottom: 8px;
-    border-radius: 0;
-  }
-  mat-button-toggle {
-    width: 100%;
-    min-height: 40px;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 0.95rem;
-    line-height: 1;
-    border: 2px solid #b5c6d6;
-    background: #fff;
-    color: #0f3257;
-    transition: background 0.2s, color 0.2s, border 0.2s;
-    box-sizing: border-box;
-  }
-  mat-button-toggle.mat-button-toggle-checked {
-    background: #3895d3;
-    color: #fff;
-    border: 2px solid #2566a6;
-    box-shadow: 0 2px 8px rgba(56,149,211,0.10);
+  .fake-recaptcha-box {
+    width: 300px;
+    height: 78px;
+    border: 1px solid #d3d3d3;
+    border-radius: 3px;
+    background: #f9f9f9;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    pointer-events: none; /* evita clicks */
+    opacity: 0.9;
   }
 
-  /* Campos y botón a ancho completo */
-  .full-width {
-    width: 100%;
-    margin: 0; /* el gap del form maneja el espacio */
+  .fake-recaptcha-box img {
+    height: 56px;
+    width: auto;
+    margin-right: 12px;
+    user-select: none;
   }
 
-  button.full-width {
-    height: 40px;
-    border-radius: 10px;
-    font-weight: 600;
+  .fake-recaptcha-text {
+    font-size: 13px;
+    color: #555;
+    font-family: Roboto, sans-serif;
+    user-select: none;
   }
 
-  /* Mensaje de error (contraseñas no coinciden) */
-  form > p:not(.forgot-password) {
-    color: #d32f2f;
-    font-size: 12px;
-    margin: -4px 0 0; /* acerca el error al campo */
-  }
-
-  /* Nota inferior */
-  .forgot-password {
-    margin-top: 4px;
-    font-size: 12px;
-    text-align: center;
-  }
-  .forgot-password a {
-    color: #2b6cb0;
-    text-decoration: none;
-  }
-  .forgot-password a:hover {
-    text-decoration: underline;
-  }
 
   /* Responsivo */
   @media (max-width: 480px) {
@@ -126,9 +160,9 @@
     .title h4 { font-size: 0.88rem; }
   }
 
-  @media (max-width: 480px) {
-    mat-button-toggle {
-      min-height: 36px;
-      font-size: 0.9rem;
-    }
+@media (max-width: 480px) {
+  mat-button-toggle {
+    min-height: 36px;
+    font-size: 0.9rem;
   }
+}
