@@ -14,11 +14,15 @@
   ));
 
   // Variables CSS personalizadas para tema claro
-  --custom-bg-color: #ffffff;
-  --custom-text-color: #ffffff;
-  --custom-text2-color: #474747;
-  --custom-primary-color: #1976d2;
-  --custom-border-color: #e0e0e0;
+  --custom-bg-color: #eef8ff;
+  --custom-primary-color: #239af8;
+  --custom-border-color: #424242;
+  --custom-button-color: #1da7f4;
+  --custom-header-color: #ffffff;
+  --custom-card-color: #f3faff;
+  --custom-title-color: #252525;
+  --custom-text-color: #4b4b4b;
+  --custom-bright-text-color: #ebfaff;
 }
 
 :root[data-theme="dark"] {
@@ -34,11 +38,15 @@
   ));
 
   // Variables CSS personalizadas para tema oscuro
-  --custom-bg-color: #121212;
-  --custom-text-color: #ffffff;
-  --custom-text2-color: #ffffff;
-  --custom-primary-color: #00518f;
-  --custom-border-color: #424242;
+  --custom-bg-color: #0d1b2a;
+  --custom-primary-color: #3b7bac;
+  --custom-border-color: #e0e0e0;
+  --custom-button-color: #3b7bac;
+  --custom-header-color: #0f1e33;
+  --custom-card-color: #162238;
+  --custom-title-color: #ffffff;
+  --custom-text-color: #c7d5e0;
+  --custom-bright-text-color: #a8d8ff;
 }
 
 body {
