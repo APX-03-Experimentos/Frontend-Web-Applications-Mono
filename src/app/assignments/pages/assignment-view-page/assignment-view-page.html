@@ -1,65 +1,91 @@
-<div class="assignment-base-column">
-  <div class="assignment-info-container">
-    <div class="assignment-info-column">
-      <h1>{{ assignment?.title }}</h1>
-      <p>{{ assignment?.description }}</p>
-      <div class="assignment-deadline-container">
+<!-- assignment-view-page.component.html -->
+<div class="assignment-view-root">
+
+  <!-- HEADER -->
+  <header class="assignment-header">
+    <div class="header-left">
+      <h1 class="assignment-title">{{ assignment?.title }}</h1>
+      <p class="assignment-subtitle">{{ assignment?.description }}</p>
+    </div>
+
+    <div class="header-actions">
+      @if (userRole === "ROLE_STUDENT") {
+        <button mat-flat-button class="btn-primary" (click)="OpenCreateSubmissionDialog()">
+          <mat-icon>upload</mat-icon>
+          {{ "assignment_page.add_submission" | translate }}
+        </button>
+      } @else if (userRole === "ROLE_TEACHER") {
+        <button mat-flat-button color="primary" (click)="OpenFilePickerForAssignmentFiles()">
+          <mat-icon>attach_file</mat-icon>
+          {{ "assignment_page.add_file_to_assignment" | translate }}
+        </button>
+
+        <input
+          #assignmentFileInput
+          type="file"
+          multiple
+          hidden
+          (change)="OnAssignmentFilesSelected($event)"
+        >
+      }
+    </div>
+  </header>
+
+
+  <!-- MAIN CONTENT (solo info-panel ahora) -->
+  <main class="assignment-main">
+    <section class="assignment-info-panel">
+      <div class="deadline-row">
         <mat-icon>schedule</mat-icon>
-        <p>{{ "assignment_page.deadline_label" | translate }} {{ GetFormattedDate() }}</p>
+        <div class="deadline-text">
+          <p class="label">{{ "assignment_page.deadline_label" | translate }}</p>
+          <p class="date">{{ GetFormattedDate() }}</p>
+        </div>
       </div>
+
       @if (assignment?.fileUrls?.length)
       {
-        <div class="assignment-files-container">
-          <h3>{{ "assignment_page.attached_files" | translate }}</h3>
-          <ul class="assignment-files-list">
+        <div class="files-panel">
+          <h3 class="files-title">{{ "assignment_page.attached_files" | translate }}</h3>
+
+          <ul class="files-list">
             @for (fileUrl of assignment?.fileUrls; track fileUrl) {
-              <li class="assignment-file-item">
-                <mat-icon class="blue">attach_file</mat-icon>
-                <span style="width: 10px"></span>
-                <a [href]="fileUrl" target="_blank" download>
-                  {{ GetFileName(fileUrl) }}
-                </a>
-                <span style="width: 10px"></span>
-                @if (userRole === "ROLE_TEACHER") {
-                  <button
-                    mat-icon-button
-                    class="red"
-                    (click)="RemoveFile(fileUrl)">
-                    <mat-icon>delete</mat-icon>
-                  </button>
-                }
+              <li class="file-item">
+                <div class="file-left">
+                  <mat-icon class="file-icon">attach_file</mat-icon>
+                  <a class="file-link" [href]="fileUrl" target="_blank" download>
+                    {{ GetFileName(fileUrl) }}
+                  </a>
+                </div>
+
+                <div class="file-actions">
+                  @if (userRole === "ROLE_TEACHER") {
+                    <button mat-icon-button class="file-delete" (click)="RemoveFile(fileUrl)">
+                      <mat-icon>delete</mat-icon>
+                    </button>
+                  }
+                </div>
               </li>
             }
           </ul>
         </div>
       }
-    </div>
-  </div>
+    </section>
+  </main>
 
-  <div class="submissions-add-bar">
+
+  <!-- SUBMISSIONS TITLE ABOVE LIST -->
+  <section class="submissions-heading">
     @if (userRole === "ROLE_STUDENT") {
-      <h1 class="submissions-indicator">{{ "assignment_page.your_submissions" | translate }}</h1>
-      <button mat-flat-button (click)="OpenCreateSubmissionDialog()">
-        {{ "assignment_page.add_submission" | translate }}
-      </button>
+      <h2 class="submissions-title">{{ "assignment_page.your_submissions" | translate }}</h2>
     } @else if (userRole === "ROLE_TEACHER") {
-      <h1 class="submissions-indicator">{{ "assignment_page.submissions" | translate }}</h1>
-
-      <button mat-flat-button color="primary" (click)="OpenFilePickerForAssignmentFiles()">
-        {{ "assignment_page.add_file_to_assignment" | translate }}
-      </button>
-
-      <input
-        #assignmentFileInput
-        type="file"
-        multiple
-        hidden
-        (change)="OnAssignmentFilesSelected($event)"
-      >
+      <h2 class="submissions-title">{{ "assignment_page.submissions" | translate }}</h2>
     }
-  </div>
-</div>
+  </section>
 
-<div class="submissions-list-container">
-  <app-submission-list [assignmentId]="preAssignmentId"></app-submission-list>
+  <!-- SUBMISSIONS LIST -->
+  <section class="submissions-list-area">
+    <app-submission-list [assignmentId]="preAssignmentId"></app-submission-list>
+  </section>
+
 </div>

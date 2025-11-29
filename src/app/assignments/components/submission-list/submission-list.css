@@ -1,15 +1,49 @@
-.submission-list-container {
-  width: 100%;
+/* submission-list.component.css */
+.submission-list-root {
   display: flex;
   flex-direction: column;
+  gap: 14px;
+}
+
+/* EMPTY STATE */
+.empty-submission {
+  background: var(--custom-card-color);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px #00000010;
+  display: flex;
+  gap: 18px;
   align-items: center;
 }
 
+.empty-img {
+  width: 110px;
+  opacity: 0.95;
+}
 
-app-submission-item {
-  width: 80%; /* Ancho fijo del 80% del contenedor */
-  max-width: 1000px; /* Ancho máximo para pantallas grandes */
-  margin-left: auto; /* Centra horizontalmente */
-  margin-right: auto;
-  display: block; /* Asegura que se comporte como un bloque */
+.empty-text h3 {
+  margin: 0 0 6px 0;
+  color: var(--custom-title-color);
+}
+
+.empty-text p {
+  margin: 0;
+  color: var(--custom-text-color);
+}
+
+/* GRID OF SUBMISSIONS */
+.submissions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 720px) {
+  .empty-submission {
+    flex-direction: column;
+    text-align: center;
+  }
+  .empty-img { width: 140px; }
+  .submissions-grid { grid-template-columns: 1fr; }
 }

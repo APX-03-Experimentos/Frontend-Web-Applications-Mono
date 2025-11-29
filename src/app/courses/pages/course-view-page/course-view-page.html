@@ -1,58 +1,67 @@
 <div class="course-view-container">
+  <!-- PANEL SUPERIOR -->
   <div class="panel-container">
     <div class="panel-title">
       <h1>
-        <mat-icon style="vertical-align: middle; position: relative; bottom: 2px">assignment</mat-icon>
+        <mat-icon class="title-icon">assignment</mat-icon>
         {{ "course_page.assignment_panel" | translate }}
       </h1>
     </div>
-    <div class="center-horizontally">
+
+    <div class="panel-actions">
       @if (userRole === "ROLE_TEACHER") {
-        <button style="min-width: 150px" mat-raised-button (click)="OpenCreateDialog()">
-          {{ "course_page.add_assignment" | translate }}
+        <button mat-raised-button class="btn-primary" (click)="OpenCreateDialog()">
           <mat-icon>add</mat-icon>
+          {{ "course_page.add_assignment" | translate }}
         </button>
-      } @else {
-        <h1>{{ "course_page.student_label" | translate }}</h1>
+      }
+      @else {
+        <h2 class="student-label">{{ "course_page.student_label" | translate }}</h2>
       }
     </div>
   </div>
 
+  <!-- CONTENIDO PRINCIPAL -->
   <div class="content-container">
+    <!-- PANEL IZQUIERDO -->
     <div class="left-panel">
       <app-assignment-list [courseId]="preCourseId"></app-assignment-list>
     </div>
 
+    <!-- PANEL DERECHO (FLOTANTE) -->
     <div class="right-panel">
-      <div class="right-panel-content-container">
-        <div class="info-section-right-panel">
-          <h1>{{ "course_page.course_info_title" | translate }}</h1>
-          <h2>{{course?.title}}</h2>
-          <h2>
-            <mat-icon style="vertical-align: middle; position: relative; bottom: 1px">person_4</mat-icon>
-            {{ "course_page.teacher_label" | translate }} {{teacher?.userName}}
+      <div class="right-panel-content">
+        <div class="course-info">
+          <h1 class="info-title">
+            {{ "course_page.course_info_title" | translate }}
+          </h1>
+
+          <h2 class="course-name">{{ course?.title }}</h2>
+
+          <h2 class="teacher-name">
+            <mat-icon class="teacher-icon">person_4</mat-icon>
+            {{ "course_page.teacher_label" | translate }} {{ teacher?.username }}
           </h2>
-          <p>{{ "course_page.course_description" | translate }}</p>
+
+          <p class="course-description">
+            {{ "course_page.course_description" | translate }}
+          </p>
         </div>
 
         @if (userRole === "ROLE_TEACHER") {
-          <button
-            mat-raised-button
-            class="members-button"
-            [routerLink]="['/course',this.preCourseId,'members']">
-            <mat-icon>group</mat-icon>
-            {{ "course_page.view_members" | translate }}
-          </button>
+          <div class="panel-actions-vertical">
+            <button mat-raised-button class="btn-secondary"
+                    [routerLink]="['/course', preCourseId, 'members']">
+              <mat-icon>group</mat-icon>
+              {{ "course_page.view_members" | translate }}
+            </button>
 
-          <button
-            mat-raised-button
-            class="analytics-button"
-            [routerLink]="['/course',this.preCourseId,'analytics']">
-            <mat-icon>analytics</mat-icon>
-            {{ "course_page.view_performance" | translate }}
-          </button>
-        } @else if (userRole === "ROLE_STUDENT") {
-
+            <button mat-raised-button class="btn-secondary"
+                    [routerLink]="['/course', preCourseId, 'analytics']">
+              <mat-icon>analytics</mat-icon>
+              {{ "course_page.view_performance" | translate }}
+            </button>
+          </div>
         }
       </div>
     </div>

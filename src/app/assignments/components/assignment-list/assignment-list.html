@@ -2,12 +2,16 @@
   @if (assignments.length === 0) {
     <div class="empty-state" aria-live="polite">
       <div class="empty-card">
-        <img src="/assets/imagen_1.png" alt="{{ 'course_page.no_assignments_alt' | translate }}" class="empty-bg" />
+        <img src="/assets/imagen_1.png"
+             class="empty-bg"
+             alt="{{ 'course_page.no_assignments_alt' | translate }}" />
+
         <h3>{{ "course_page.no_assignments_title" | translate }}</h3>
         <p>{{ "course_page.no_assignments_message" | translate }}</p>
       </div>
     </div>
   }
+
   @for (assignment of assignments; track assignment.id) {
     <app-assignment-item [assignment]="assignment"></app-assignment-item>
   }
