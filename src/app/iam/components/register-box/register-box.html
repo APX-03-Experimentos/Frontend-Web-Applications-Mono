@@ -10,6 +10,7 @@
       <mat-button-toggle value="ROLE_STUDENT">Estudiante</mat-button-toggle>
       <mat-button-toggle value="ROLE_TEACHER">Profesor</mat-button-toggle>
     </mat-button-toggle-group>
+
     <form>
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Nombre de Usuario</mat-label>
@@ -25,16 +26,22 @@
         <mat-label>Confirmar Contraseña</mat-label>
         <input matInput (ngModelChange)="passwordsMatch = true" [(ngModel)]="confirmPassword" name="confirmPassword" type="password" placeholder="Confirma tu contraseña" required>
       </mat-form-field>
-      <div class="fake-recaptcha">
-        <div class="fake-recaptcha-box">
-          <img src="/assets/recaptcha_fake.png" alt="reCAPTCHA mockup">
-          <div class="fake-recaptcha-text">Protected by reCAPTCHA</div>
-        </div>
-      </div>
-      @if (!passwordsMatch) { <p>{{'auth_page.passwords_not_match' | translate}}</p> }
 
-      <button mat-raised-button color="primary" class="full-width" (click)="SignUp()">
-        Registrarse
+      <!-- reCAPTCHA Container -->
+      <div class="captcha-section">
+        <h4 style="text-align: start; margin-bottom: 10px;">Verificación de seguridad:</h4>
+        <div id="recaptcha-container" class="recaptcha-container"></div>
+        @if (!isCaptchaLoaded) {
+          <div class="captcha-loading">Cargando reCAPTCHA...</div>
+        }
+      </div>
+
+      @if (!passwordsMatch) {
+        <p class="error-message">{{'auth_page.passwords_not_match' | translate}}</p>
+      }
+
+      <button mat-raised-button color="primary" class="full-width" (click)="SignUp()" [disabled]="!isCaptchaLoaded">
+        {{ isCaptchaLoaded ? 'Registrarse' : 'Cargando reCAPTCHA...' }}
       </button>
 
       <p class="forgot-password">

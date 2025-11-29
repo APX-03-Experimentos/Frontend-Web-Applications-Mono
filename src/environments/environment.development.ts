@@ -8,4 +8,5 @@ export const environment = {
   assignmentsEndpointPath: '/assignments',
   submissionsEndpointPath: '/submissions',
   notificationsEndpointPath: '/notifications',
+  captchaEndpointPath: '/captcha',
 };
