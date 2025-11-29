@@ -4,7 +4,6 @@
       <h2 class="assignment-title">{{ assignment?.title }}</h2>
       <p class="assignment-description">{{ assignment?.description }}</p>
       <p class="assignment-date">
-        <mat-icon>event</mat-icon>
         {{ "course_page.assignment_due" | translate }} {{ GetFormattedDate() }}
       </p>
     </div>
@@ -12,7 +11,6 @@
     <div class="actions-section">
       <button mat-raised-button color="primary" class="btn-primary"
               [routerLink]="['/assignment', assignment?.id]">
-        <mat-icon>search</mat-icon>
         {{ "course_page.assignment_view" | translate }}
       </button>
     </div>

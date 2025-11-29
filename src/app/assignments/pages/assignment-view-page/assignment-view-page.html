@@ -11,12 +11,10 @@
     <div class="header-actions">
       @if (userRole === "ROLE_STUDENT") {
         <button mat-flat-button class="btn-primary" (click)="OpenCreateSubmissionDialog()">
-          <mat-icon>upload</mat-icon>
           {{ "assignment_page.add_submission" | translate }}
         </button>
       } @else if (userRole === "ROLE_TEACHER") {
         <button mat-flat-button color="primary" (click)="OpenFilePickerForAssignmentFiles()">
-          <mat-icon>attach_file</mat-icon>
           {{ "assignment_page.add_file_to_assignment" | translate }}
         </button>
 
@@ -36,7 +34,6 @@
   <main class="assignment-main">
     <section class="assignment-info-panel">
       <div class="deadline-row">
-        <mat-icon>schedule</mat-icon>
         <div class="deadline-text">
           <p class="label">{{ "assignment_page.deadline_label" | translate }}</p>
           <p class="date">{{ GetFormattedDate() }}</p>
@@ -52,7 +49,6 @@
             @for (fileUrl of assignment?.fileUrls; track fileUrl) {
               <li class="file-item">
                 <div class="file-left">
-                  <mat-icon class="file-icon">attach_file</mat-icon>
                   <a class="file-link" [href]="fileUrl" target="_blank" download>
                     {{ GetFileName(fileUrl) }}
                   </a>
