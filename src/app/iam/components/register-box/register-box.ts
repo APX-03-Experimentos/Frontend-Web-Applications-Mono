@@ -117,27 +117,12 @@ export class RegisterBox implements OnInit, OnDestroy {
       this.authService.signup(this.username, this.password, this.userType, this.captchaToken).subscribe({
         next: (account) => {
           console.log('✅ Registro exitoso:', account);
-
-          // Login automático después del registro
-          this.authService.login(account.userName, this.password).subscribe({
-            next: (result) => {
-              this.tokenService.setToken(result.token);
-              this.router.navigate(['courses']).then(() => {
-                this.loadingService.stopLoadingDialog();
-              });
-            },
-            error: (loginError) => {
-              console.error('❌ Error en login automático:', loginError);
-              this.loadingService.stopLoadingDialog();
-              alert('Registro exitoso, pero error en login automático. Por favor inicia sesión manualmente.');
-            }
-          });
+          this.resetForm();
         },
         error: (err) => {
           console.error('❌ Error en registro:', err);
           this.loadingService.stopLoadingDialog();
 
-          // Mostrar mensaje de error específico
           if (err.error?.message) {
             alert('Error en registro: ' + err.error.message);
           } else {
@@ -156,7 +141,6 @@ export class RegisterBox implements OnInit, OnDestroy {
     }
   }
 
-  // Método para resetear el formulario
   resetForm() {
     this.username = '';
     this.password = '';

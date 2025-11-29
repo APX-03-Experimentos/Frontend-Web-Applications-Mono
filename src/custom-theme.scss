@@ -1,9 +1,7 @@
-// custom-theme.css
 @use '@angular/material' as mat;
 
 :root[data-theme="light"],
 :root:not([data-theme]) {
-  // Tema claro por defecto
   @include mat.theme((
     color: (
       primary: mat.$azure-palette,
@@ -12,8 +10,6 @@
     typography: Roboto,
     density: 0,
   ));
-
-  // Variables CSS personalizadas para tema claro
   --custom-bg-color: #eef8ff;
   --custom-primary-color: #239af8;
   --custom-border-color: #424242;
@@ -26,7 +22,6 @@
 }
 
 :root[data-theme="dark"] {
-  // Tema oscuro
   @include mat.theme((
     color: (
       primary: mat.$azure-palette,
@@ -36,8 +31,6 @@
     typography: Roboto,
     density: 0,
   ));
-
-  // Variables CSS personalizadas para tema oscuro
   --custom-bg-color: #0d1b2a;
   --custom-primary-color: #3b7bac;
   --custom-border-color: #e0e0e0;
@@ -46,17 +39,17 @@
   --custom-card-color: #162238;
   --custom-title-color: #ffffff;
   --custom-text-color: #c7d5e0;
-  --custom-bright-text-color: #a8d8ff;
+  --custom-bright-text-color: #d0e9ff;
 }
 
 body {
-  // Deferir al atributo data-theme
   color-scheme: var(--data-theme, light);
   font: var(--mat-sys-body-medium);
-
-  // Usar variables CSS personalizadas
   background-color: var(--custom-bg-color);
   color: var(--custom-text-color);
-
   margin: 0;
+}
+
+* {
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
