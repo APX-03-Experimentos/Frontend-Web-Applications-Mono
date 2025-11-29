@@ -4,18 +4,18 @@
   margin: 0 auto;
   font-family: 'Roboto', sans-serif;
   background-color: var(--custom-bg-color);
-  color: var(--custom-text2-color);
+  color: var(--custom-text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  color: var(--custom-text2-color);
+  color: var(--custom-text-color);
   text-align: center;
 }
 
-/* === Cards de resumen === */
+
 .stats-overview {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -60,13 +60,13 @@ h1 {
 }
 
 .chart-tabs button {
-  background: var(--custom-border-color);
+  background: var(--custom-button-color);
   border: none;
   border-radius: 20px;
   padding: 8px 16px;
   cursor: pointer;
   font-weight: 500;
-  color: var(--custom-text2-color);
+  color: var(--custom-text-color);
   transition: background 0.3s, color 0.3s;
 }
 
@@ -93,7 +93,7 @@ h1 {
   text-align: center;
   font-size: 1.2rem;
   margin-bottom: 10px;
-  color: var(--custom-text2-color);
+  color: var(--custom-text-color);
 }
 
 /* === Detalle de asignaciones === */
