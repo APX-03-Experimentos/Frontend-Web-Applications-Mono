@@ -9,6 +9,7 @@ import {AuthService} from '../../services/auth.service';
 import {TokenService} from '../../../shared/services/token.service';
 import {Router, RouterLink} from '@angular/router';
 import {TranslatePipe} from '@ngx-translate/core';
+import {ThemeToggle} from '../../../shared/components/theme-toggle/theme-toggle';
 
 @Component({
   selector: 'app-auth-page',
@@ -20,7 +21,8 @@ import {TranslatePipe} from '@ngx-translate/core';
     LoginBox,
     RegisterBox,
     RouterLink,
-    TranslatePipe
+    TranslatePipe,
+    ThemeToggle
   ],
   templateUrl: './auth-page.html',
   standalone: true,

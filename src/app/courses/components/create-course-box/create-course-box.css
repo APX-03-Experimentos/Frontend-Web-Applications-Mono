@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  background: var(--custom-bg-color);
+  background: var(--custom-card-color);
   border: var(--custom-border-color);
   border-width: 10px;
   min-height: 100px;

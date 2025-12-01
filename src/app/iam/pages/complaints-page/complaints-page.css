@@ -13,7 +13,7 @@
   background:
     radial-gradient(circle at 25px 25px, rgba(56,149,211,.12) 2px, transparent 3px) 0 0/50px 50px,
     radial-gradient(circle at 0 0, rgba(56,149,211,.06) 2px, transparent 3px) 25px 25px/50px 50px,
-    linear-gradient(180deg, #f8fbff, #eef6ff 60%, #e9f3ff);
+    var(--custom-bg-color);
 }
 
 .main {
@@ -29,7 +29,7 @@
   width: 90%;
   margin: 0 auto;
   padding: 12px 16px 20px;
-  background: rgba(255,255,255,.86);
+  background: var(--custom-card-color);
   border: 1px solid rgba(56,149,211,.15);
   border-radius: 16px;
   box-shadow:
@@ -47,13 +47,13 @@ img {
 
 h2 {
   margin: 0 0 6px;
-  color: #0f3257;
+  color: var(--custom-title-color);
   font-weight: 700;
 }
 
 h4 {
   margin: 0 0 16px;
-  color: #3e6b8f;
+  color: var(--custom-text-color);
   font-weight: 500;
 }
 
@@ -89,8 +89,8 @@ button[mat-raised-button] {
   height: var(--footer-height);
   box-sizing: border-box;
   z-index: 999;
-  background: linear-gradient(180deg, #3e6b8f, #365a78);
-  color: #fff;
+  background: var(--custom-header-color);
+  color: var(--custom-text-color);
   padding: 12px 16px;
   box-shadow: 0 -4px 12px rgba(15,50,87,0.12);
 }
@@ -117,7 +117,6 @@ button[mat-raised-button] {
 }
 
 .footer-link {
-  color: rgba(255,255,255,0.95);
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
