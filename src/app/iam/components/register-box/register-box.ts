@@ -1,10 +1,10 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {Component, OnInit, OnDestroy, EventEmitter} from '@angular/core';
 import { MatCard, MatCardContent } from '@angular/material/card';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { MatButton } from '@angular/material/button';
 import { MatButtonToggle, MatButtonToggleGroup } from '@angular/material/button-toggle';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, NgForm} from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { TokenService } from '../../../shared/services/token.service';
 import { LoadingService } from '../../../shared/services/loading.service';
@@ -87,7 +87,7 @@ export class RegisterBox implements OnInit, OnDestroy {
     }
   }
 
-  async SignUp(): Promise<void> {
+  async SignUp(form: NgForm): Promise<void> {
     console.log('=== INICIANDO REGISTRO ===');
     console.log('Username:', this.username);
     console.log('Captcha Token:', this.captchaToken ? '✅ Presente' : '❌ Faltante');
@@ -110,18 +110,21 @@ export class RegisterBox implements OnInit, OnDestroy {
       return;
     }
 
-    this.loadingService.startLoadingDialog();
+    const stopLoadingEvent = new EventEmitter();
+    this.loadingService.LoadingDialog(stopLoadingEvent);
 
     try {
-      // Registrar usuario (el backend manejará la verificación del CAPTCHA)
       this.authService.signup(this.username, this.password, this.userType, this.captchaToken).subscribe({
         next: (account) => {
           console.log('✅ Registro exitoso:', account);
-          this.resetForm();
+          this.resetForm(form);
+          stopLoadingEvent.emit();
+          alert('Cuenta creada exitosamente!')
+          this.router.navigate(["/auth"]);
         },
         error: (err) => {
           console.error('❌ Error en registro:', err);
-          this.loadingService.stopLoadingDialog();
+          stopLoadingEvent.emit();
 
           if (err.error?.message) {
             alert('Error en registro: ' + err.error.message);
@@ -136,15 +139,13 @@ export class RegisterBox implements OnInit, OnDestroy {
 
     } catch (error) {
       console.error('❌ Error general:', error);
-      this.loadingService.stopLoadingDialog();
+      stopLoadingEvent.emit()
       alert('Error inesperado. Por favor intenta nuevamente.');
     }
   }
 
-  resetForm() {
-    this.username = '';
-    this.password = '';
-    this.confirmPassword = '';
+  resetForm(form: NgForm) {
+    form.resetForm();
     this.passwordsMatch = true;
     this.captchaService.reset();
   }
