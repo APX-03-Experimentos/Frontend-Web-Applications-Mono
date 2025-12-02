@@ -1,9 +1,8 @@
-/* src/app/iam/components/register-box/register-box.css */
+
 :host {
   display: block;
 }
 
-/* Evita "doble tarjeta" y compacta el contenedor */
 mat-card {
   width: 100%;
   max-width: 360px;
@@ -14,12 +13,10 @@ mat-card {
   box-shadow: none;
 }
 
-/* Elimina padding interno del contenido de la card */
 mat-card-content {
   padding: 0;
 }
 
-/* Cabecera del registro */
 .title {
   margin-bottom: 8px;
   text-align: center;
@@ -27,41 +24,41 @@ mat-card-content {
 .title h3 {
   margin: 0;
   font-size: 1.25rem;
-  color: #0f3257;
+  color: var(--custom-title-color);
   font-weight: 700;
 }
 .title h4 {
   margin: 2px 0 0;
   font-size: 0.92rem;
-  color: #3e6b8f;
+  color: var(--custom-text-color);
   font-weight: 500;
 }
 
-/* Subtítulo dentro del contenido (e.g., "Tipo de usuario") */
 mat-card-content > h4 {
   margin: 8px 0 6px;
   text-align: start;
   font-size: 0.95rem;
-  color: #0f3257;
+  color: var(--custom-title-color);
   font-weight: 600;
 }
 
-/* Formulario compacto con separación uniforme */
 form {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  align-items: center;
 }
 
-/* Selector de tipo de usuario */
 mat-button-toggle-group {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr; /* ambos con el mismo ancho */
-  gap: 8px;                       /* separa los toggles */
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
   background: transparent;
   border: 0;
-  margin-bottom: 8px;             /* más aire debajo */
+  margin-bottom: 8px;
+  border-radius: 0;
+  overflow: visible;
 }
 mat-button-toggle {
   width: 100%;
@@ -70,7 +67,7 @@ mat-button-toggle {
   text-align: center;
   font-size: 0.95rem;
   line-height: 1.2;
-  border: 2px solid #b5c6d6; /* borde gris claro siempre visible */
+  border: 2px solid #b5c6d6;
   background: #fff;
   color: #0f3257;
   transition: background 0.2s, color 0.2s, border 0.2s;
@@ -149,6 +146,43 @@ form > p:not(.forgot-password) {
     font-family: Roboto, sans-serif;
     user-select: none;
   }
+
+.recaptcha-container {
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.captcha-section {
+  margin: 20px 0;
+}
+
+.captcha-loading {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-style: italic;
+}
+
+.error-message {
+  color: #f44336;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Asegurar que el reCAPTCHA se vea bien */
+::ng-deep .g-recaptcha iframe {
+  width: 100% !important;
+}
+
+::ng-deep .g-recaptcha > div > div {
+  width: 100% !important;
+}
 
 
   /* Responsivo */

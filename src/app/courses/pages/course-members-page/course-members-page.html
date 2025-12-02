@@ -1,59 +1,67 @@
 <div class="course-members-container">
 
-  <div class="course-header">
+
+  <header class="course-header">
     <h1>{{ course?.title }}</h1>
-  </div>
+  </header>
+
 
   <section class="teacher-section">
     <h2>{{ "course_page.teacher_section_title" | translate }}</h2>
-    <table class="members-table">
-      <thead>
-      <tr>
-        <th>{{ "course_page.username_header" | translate }}</th>
-      </tr>
-      </thead>
-      <tbody>
-        @if (teacher) {
-          <tr>
-            <td>{{ teacher.userName }}</td>
-          </tr>
-        }
-        @if (!teacher) {
-          <tr>
-            <td class="placeholder">{{ "course_page.loading_teacher" | translate }}</td>
-          </tr>
-        }
-      </tbody>
-    </table>
+    <div class="panel">
+      <table class="members-table">
+        <thead>
+        <tr>
+          <th>{{ "course_page.username_header" | translate }}</th>
+        </tr>
+        </thead>
+        <tbody>
+          @if (teacher) {
+            <tr>
+              <td>{{ teacher.username }}</td>
+            </tr>
+          }
+          @if (!teacher) {
+            <tr>
+              <td class="placeholder">{{ "course_page.loading_teacher" | translate }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
   </section>
+
 
   <section class="students-section">
     <h2>{{ "course_page.students_section_title" | translate }}</h2>
-    <table class="members-table">
-      <thead>
-      <tr>
-        <th>{{ "course_page.username_header" | translate }}</th>
-        <th>{{ "course_page.actions_header" | translate }}</th>
-      </tr>
-      </thead>
-      <tbody>
-        @for (student of students; track student.id) {
-          <tr>
-            <td>{{ student.userName }}</td>
-            <td>
-              <button (click)="kickStudent(student.id)" class="kick-button">
-                {{ "course_page.kick_button" | translate }}
-              </button>
-            </td>
-          </tr>
-        }
-        @if (students.length === 0) {
-          <tr>
-            <td colspan="2" class="placeholder">{{ "course_page.no_students" | translate }}</td>
-          </tr>
-        }
-      </tbody>
-    </table>
+    <div class="panel">
+      <table class="members-table">
+        <thead>
+        <tr>
+          <th>{{ "course_page.username_header" | translate }}</th>
+          <th>{{ "course_page.actions_header" | translate }}</th>
+        </tr>
+        </thead>
+        <tbody>
+          @for (student of students; track student.id) {
+            <tr>
+              <td>{{ student.username }}</td>
+              <td>
+                <button (click)="kickStudent(student.id)" class="kick-button">
+                  {{ "course_page.kick_button" | translate }}
+                </button>
+              </td>
+            </tr>
+          }
+          @if (students.length === 0) {
+            <tr>
+              <td colspan="2" class="placeholder">{{ "course_page.no_students" | translate }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
   </section>
+
 
 </div>

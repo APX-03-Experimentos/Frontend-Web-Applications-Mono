@@ -1,24 +1,40 @@
+<!-- submission-item.component.html -->
 <mat-card class="submission-card">
+
+  <!-- Header: avatar/icon + student name + status badge -->
   <div class="card-header">
-    <mat-icon class="icon">person</mat-icon>
-    <div class="card-info-column">
-      <h1>{{ "assignment_page.submission_student" | translate }} {{ owner?.userName }}</h1>
+    <div class="header-left">
+      <mat-icon class="avatar-icon">person</mat-icon>
+      <div class="student-info">
+        <h3 class="student-name">{{ "assignment_page.submission_student" | translate }} {{ owner?.username }}</h3>
+        <p class="submitted-meta">
+          <!-- si necesitas timestamp aquí, no lo añadí porque no estaba en el HTML original -->
+        </p>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <div class="grade-info">
+        <h4 class="grade-label">{{ "assignment_page.submission_grade" | translate }}</h4>
+        <p class="grade-value">
+          @if (submission?.status === "NOT_GRADED") {
+            {{ "assignment_page.submission_none" | translate }}
+          } @else if (submission?.status === "GRADED") {
+            {{ submission?.score }}
+          }
+        </p>
+      </div>
     </div>
   </div>
 
+  <!-- Body (contenido extra si existe) -->
   <div class="card-body">
-    <h2>
-      {{ "assignment_page.submission_grade" | translate }}
-      @if (submission?.status === "NOT_GRADED") {
-        {{ "assignment_page.submission_none" | translate }}
-      } @else if (submission?.status === "GRADED") {
-        {{ submission?.score }}
-      }
-    </h2>
+    <!-- placeholder para descripción/preview (no se añade lógica) -->
   </div>
 
+  <!-- Actions -->
   <div class="card-actions">
-    <button mat-raised-button (click)="OpenContent()">
+    <button mat-raised-button class="btn-primary" (click)="OpenContent()">
       <mat-icon>visibility</mat-icon>
       {{ "assignment_page.submission_view" | translate }}
     </button>

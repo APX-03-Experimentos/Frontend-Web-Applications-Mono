@@ -1,116 +1,147 @@
-.assignment-base-column {
+.assignment-view-root {
   display: flex;
   flex-direction: column;
-  position: sticky;
-  width: 100%;
-  z-index: 999;
+  gap: 18px;
+  padding: 22px;
 }
 
-.assignment-base-column .submissions-indicator {
-  margin-top: 2%;
-  margin-left: 10%
-}
-
-.assignment-info-container {
+/* HEADER */
+.assignment-header {
   display: flex;
-  flex-direction: row;
-  background-color: var(--custom-primary-color);
-  width: 100%;
-  height: 40%;
+  justify-content: space-between;
   align-items: center;
-  padding-left: 100px;
+  background: var(--custom-card-color);
+  padding: 16px 18px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px #00000014;
+  gap: 12px;
+}
+
+.header-left {
+  max-width: 70%;
+}
+
+.assignment-title {
+  margin: 0;
+  font-size: 1.35rem;
+  color: var(--custom-title-color);
+}
+
+.assignment-subtitle {
+  margin: 6px 0 0 0;
   color: var(--custom-text-color);
+  opacity: 0.95;
+  line-height: 1.4;
+  font-size: 0.95rem;
 }
 
-.assignment-info-container img {
-  border-radius: 20%;
-  margin: 30px 30px 30px 60px;
-  max-height: 70%;
-}
-
-.assignment-info-column {
+/* MAIN - ahora solo 1 panel */
+.assignment-main {
   display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
 }
 
-.assignment-info-column p {
-  font-size: 20px;
+.assignment-info-panel {
+  flex: 1;
+  background: var(--custom-card-color);
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px #0000000f;
 }
 
-.assignment-deadline-container {
+/* DEADLINE */
+.deadline-row {
   display: flex;
-  flex-direction: row;
   align-items: center;
+  gap: 12px;
+  color: var(--custom-primary-color);
+  margin-bottom: 12px;
 }
 
-.assignment-deadline-container mat-icon {
-  margin-right: 10px;
+.deadline-row mat-icon {
+  font-size: 22px;
 }
 
-.assignment-deadline-container p {
-  font-size: 20px;
+.deadline-text .label {
+  margin: 0;
+  font-weight: 600;
+  color: var(--custom-title-color);
 }
 
-.submissions-add-bar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-right: 8%;
+.deadline-text .date {
+  margin: 0;
+  color: var(--custom-primary-color);
+  font-weight: 600;
 }
 
-.submissions-add-bar button {
-  margin-left: auto;
+/* FILES */
+.files-panel {
+  margin-top: 12px;
 }
 
-
-.assignment-info-container {
-  margin-top: 0;
-}
-.assignment-info-container {
-  margin-top: 0;
-  padding-top: 0;
-}
-.assignment-base-column {
-  margin-top: 0 !important;
+.files-title {
+  margin: 0 0 10px 0;
+  color: var(--custom-title-color);
 }
 
-app-assignment-view-page {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-.assignment-files-container {
-  margin-top: 15px;
-}
-
-.assignment-files-list {
+.files-list {
+  margin: 0;
+  padding: 0;
   list-style: none;
-  padding-left: 0;
-  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.assignment-file-item {
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.02);
+  padding: 10px 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #00000008;
+}
+
+.file-left {
   display: flex;
   align-items: center;
-  margin-bottom: 8px;
+  gap: 10px;
 }
 
-.blue {
-  color: var(--custom-text-color);
+.file-icon {
+  color: var(--custom-primary-color);
 }
 
-.assignment-file-item a {
+.file-link {
+  color: var(--custom-primary-color);
   text-decoration: none;
-  color: var(--custom-text-color);
   font-weight: 500;
 }
 
-.assignment-file-item a:hover {
-  text-decoration: underline;
+/* SUBMISSIONS */
+.submissions-heading {
+  margin-top: 4px;
 }
 
-.red {
-  color: red;
+.submissions-title {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--custom-title-color);
+}
+
+.submissions-list-area {
+  margin-top: 6px;
+}
+
+/* BUTTON */
+.btn-primary {
+  background-color: var(--custom-primary-color) !important;
+  color: var(--custom-bright-text-color) !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .header-left {
+    max-width: 100%;
+  }
 }

@@ -26,13 +26,13 @@ mat-card-content {
 .title h3 {
   margin: 0;
   font-size: 1.25rem;
-  color: #0f3257;
+  color: var(--custom-title-color);
   font-weight: 700;
 }
 .title h4 {
   margin: 2px 0 0;
   font-size: 0.92rem;
-  color: #3e6b8f;
+  color: var(--custom-text-color);
   font-weight: 500;
 }
 

@@ -1,6 +1,7 @@
 .sidenav-container {
   height: 100%;
   width: 100%;
+  background-color: var(--custom-bg-color);
 }
 
 mat-sidenav {
@@ -16,7 +17,6 @@ mat-sidenav {
   color: white;
 }
 
-/* Logo arriba */
 .logo-container {
   display: flex;
   flex-direction: column;
@@ -110,8 +110,8 @@ mat-sidenav {
 }
 
 .toolbar {
-  background: var(--custom-primary-color);
-  color: #fff;
+  background: var(--custom-header-color);
+  color: var(--custom-text-color);
   box-shadow: 0 2px 12px rgba(56,149,211,0.15);
   border-bottom: 2px solid #2566a6;
   min-height: 64px;

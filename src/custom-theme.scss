@@ -1,9 +1,7 @@
-// custom-theme.css
 @use '@angular/material' as mat;
 
 :root[data-theme="light"],
 :root:not([data-theme]) {
-  // Tema claro por defecto
   @include mat.theme((
     color: (
       primary: mat.$azure-palette,
@@ -12,17 +10,18 @@
     typography: Roboto,
     density: 0,
   ));
-
-  // Variables CSS personalizadas para tema claro
-  --custom-bg-color: #ffffff;
-  --custom-text-color: #ffffff;
-  --custom-text2-color: #474747;
-  --custom-primary-color: #1976d2;
-  --custom-border-color: #e0e0e0;
+  --custom-bg-color: #eef8ff;
+  --custom-primary-color: #239af8;
+  --custom-border-color: #424242;
+  --custom-button-color: #1da7f4;
+  --custom-header-color: #ffffff;
+  --custom-card-color: #ffffff;
+  --custom-title-color: #252525;
+  --custom-text-color: #4b4b4b;
+  --custom-bright-text-color: #ebfaff;
 }
 
 :root[data-theme="dark"] {
-  // Tema oscuro
   @include mat.theme((
     color: (
       primary: mat.$azure-palette,
@@ -32,23 +31,24 @@
     typography: Roboto,
     density: 0,
   ));
-
-  // Variables CSS personalizadas para tema oscuro
-  --custom-bg-color: #121212;
-  --custom-text-color: #ffffff;
-  --custom-text2-color: #ffffff;
-  --custom-primary-color: #00518f;
-  --custom-border-color: #424242;
+  --custom-bg-color: #0d1b2a;
+  --custom-primary-color: #3b7bac;
+  --custom-border-color: #e0e0e0;
+  --custom-button-color: #3b7bac;
+  --custom-header-color: #0f1e33;
+  --custom-card-color: #162238;
+  --custom-title-color: #ffffff;
+  --custom-text-color: #c7d5e0;
+  --custom-bright-text-color: #d0e9ff;
 }
 
 body {
-  // Deferir al atributo data-theme
   color-scheme: var(--data-theme, light);
   font: var(--mat-sys-body-medium);
-
-  // Usar variables CSS personalizadas
-  background-color: var(--custom-bg-color);
   color: var(--custom-text-color);
-
   margin: 0;
+}
+
+* {
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }

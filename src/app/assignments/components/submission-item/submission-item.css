@@ -1,81 +1,84 @@
+/* submission-item.component.css */
 .submission-card {
-  width: 50vw;
-  height: 10vh;
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.card-info-column {
+  background: var(--custom-card-color) !important;
+  border-radius: 14px !important;
+  padding: 0;
+  box-shadow: 0 6px 20px #00000010 !important;
   display: flex;
   flex-direction: column;
-  margin-left: 5%;
-  align-items: center;
-  justify-content: center;
+  transition: transform 0.14s ease, box-shadow 0.2s ease;
 }
 
-.card-actions {
-  margin-left: auto;
+.submission-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px #00000018 !important;
 }
 
-.card-actions button {
-  margin-left: auto;
-  margin-right: 20px;
-}
-
-.submission-card mat-icon {
-}
-
-.submission-card {
-  padding: 20px;
-  background-color: var(--custom-primary-color);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 16px;
-  width: 80%;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
+/* HEADER */
 .card-header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px; /* Espaciado entre el encabezado y el cuerpo */
+  padding: 16px 18px;
+  gap: 12px;
 }
 
-.card-header .icon {
-  transform: scale(150%);
-  margin-right: 16px;
-  color: var(--custom-text-color);
-}
-
-.card-info-column h1 {
-  font-size: 20px;
-  color: var(--custom-text-color);
-  margin: 0;
-}
-
-.card-body h2 {
-  font-size: 18px;
-  color: var(--custom-text-color);
-  margin: 0;
-}
-
-.card-actions {
-  margin-top: 16px; /* Espaciado superior */
+.header-left {
   display: flex;
-  justify-content: flex-end; /* Botón alineado a la derecha */
+  align-items: center;
+  gap: 12px;
 }
 
-.card-actions button {
-  background-color: #007bb5;
+.avatar-icon {
+  font-size: 36px;
+  color: var(--custom-primary-color);
+  background: rgba(0,0,0,0.03);
+  border-radius: 8px;
+  padding: 6px;
+}
+
+.student-name {
+  margin: 0;
+  color: var(--custom-title-color);
+  font-size: 1rem;
+}
+
+.header-right {
+  text-align: right;
+}
+
+.grade-label {
+  margin: 0;
+  font-size: 0.85rem;
   color: var(--custom-text-color);
-  border-radius: 4px;
-  padding: 8px 16px;
 }
 
-.card-actions button:hover {
-  background-color: #005f8a; /* Azul más oscuro al pasar el mouse */
+.grade-value {
+  margin: 4px 0 0 0;
+  font-weight: 600;
+  color: var(--custom-primary-color);
+}
+
+/* BODY */
+.card-body {
+  padding: 0 18px;
+  min-height: 8px;
+}
+
+/* ACTIONS */
+.card-actions {
+  padding: 14px 18px 18px 18px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-primary {
+  background-color: var(--custom-primary-color) !important;
+  color: var(--custom-bright-text-color) !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 520px) {
+  .card-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .header-right { text-align: left; width: 100%; }
 }

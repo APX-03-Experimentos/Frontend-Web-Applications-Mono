@@ -8,6 +8,5 @@ body {
 
 
 .sidenav-container {
-  background: var(--custom-bg-color);
   min-height: 100vh;
 }

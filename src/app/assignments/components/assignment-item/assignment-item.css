@@ -1,50 +1,47 @@
 .assignment-card {
-  padding: 20px;
-  background-color: var(--custom-primary-color);
-  border-radius: 8px; /* Bordes redondeados */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-  margin-bottom: 16px; /* Espaciado entre tarjetas */
-  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  background: var(--custom-card-color);
+  border-radius: 16px !important;
+  box-shadow: 0 4px 12px #0002;
+  padding: 0;
+}
+
+.assignment-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px #00000035;
 }
 
 .card-content {
+  padding: 25px;
   display: flex;
-  justify-content: space-between; /* Separa la información y el botón */
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.assignment-title {
+  margin: 0 0 10px 0;
+  color: var(--custom-title-color);
+}
+
+.assignment-description {
+  margin: 0 0 10px 0;
+  color: var(--custom-text-color);
+  opacity: 0.9;
+}
+
+.assignment-date {
+  display: flex;
   align-items: center;
-}
-
-.info-section {
-  flex: 1;
-  padding-right: 16px; /* Espaciado entre la información y el botón */
-}
-
-.info-section h2 {
-  font-size: 20px;
-  color: var(--custom-text-color);
-  margin-bottom: 8px;
-}
-
-.info-section p {
-  font-size: 16px;
-  color: var(--custom-text-color);
-  margin: 4px 0;
-}
-
-.actions-section {
-  margin-left: 1rem;
+  gap: 6px;
+  color: var(--custom-primary-color);
+  font-weight: 500;
 }
 
 .actions-section button {
-  background-color: #007bb5; /* Botón azul */
-  color: #ffffff;
-  border-radius: 4px;
-  padding: 8px 16px;
+  min-width: 150px;
 }
 
-.actions-section button:hover {
-  background-color: #005f8a; /* Azul más oscuro al pasar el mouse */
-}
-
-.assignments-container {
-  background-color: transparent; /* Fondo transparente */
+/* Botón interno */
+.btn-primary {
+  background-color: var(--custom-primary-color) !important;
+  color: var(--custom-bright-text-color) !important;
 }
