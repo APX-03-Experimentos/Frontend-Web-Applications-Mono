@@ -11,7 +11,7 @@
       <mat-button-toggle value="ROLE_TEACHER">Profesor</mat-button-toggle>
     </mat-button-toggle-group>
 
-    <form>
+    <form #registerForm="ngForm">
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Nombre de Usuario</mat-label>
         <input matInput [(ngModel)]="username" name="username" placeholder="Ingresa tu nombre de usuario" required>
@@ -40,7 +40,9 @@
         <p class="error-message">{{'auth_page.passwords_not_match' | translate}}</p>
       }
 
-      <button mat-raised-button color="primary" class="full-width" (click)="SignUp()" [disabled]="!isCaptchaLoaded">
+      <button mat-raised-button color="primary" class="full-width"
+              (click)="SignUp(registerForm)"
+              [disabled]="!isCaptchaLoaded">
         {{ isCaptchaLoaded ? 'Registrarse' : 'Cargando reCAPTCHA...' }}
       </button>
 
